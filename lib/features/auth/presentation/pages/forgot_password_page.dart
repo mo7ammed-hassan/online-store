@@ -52,7 +52,7 @@ class ForgotPasswordPage extends StatelessWidget {
     return BasicAppButton(
       title: 'Continue',
       onPressed: () {
-        context.pushReplacement(const ResetPasswordPage());
+        context.pushReplacement(const ResetPage());
       },
     );
   }
