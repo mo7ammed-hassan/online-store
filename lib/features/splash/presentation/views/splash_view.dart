@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:online_store/common/helper/navigation.dart';
 import 'package:online_store/core/configs/assets/app_images.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
+import 'package:online_store/features/auth/presentation/views/signin.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -26,6 +28,7 @@ class _SplashViewState extends State<SplashView>
     ).animate(animationController!);
 
     animationController!.forward();
+    redirect();
     super.initState();
   }
 
@@ -50,6 +53,13 @@ class _SplashViewState extends State<SplashView>
           },
         ),
       ),
+    );
+  }
+
+  Future<void> redirect() async {
+    await Future.delayed(const Duration(seconds: 4));
+    context.pushReplacement(
+      const SigninView(),
     );
   }
 }

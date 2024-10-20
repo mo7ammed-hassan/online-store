@@ -3,7 +3,9 @@ import 'package:online_store/core/configs/theme/app_theme.dart';
 import 'package:online_store/features/splash/presentation/views/splash_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
