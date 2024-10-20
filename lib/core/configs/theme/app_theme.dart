@@ -6,6 +6,7 @@ class AppTheme {
     brightness: Brightness.light,
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.lightModeBackgroundColor,
+    fontFamily: 'Inter',
     textTheme: const TextTheme(
       headlineLarge: TextStyle(color: AppColors.primaryTextColorLightMode),
       titleLarge: TextStyle(color: AppColors.primaryTextColorLightMode),
@@ -37,6 +38,7 @@ class AppTheme {
     brightness: Brightness.dark,
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.darkModeBackgroundColor,
+    fontFamily: 'Inter',
     textTheme: const TextTheme(
       headlineLarge: TextStyle(color: AppColors.primaryTextColorDarkMode),
       titleLarge: TextStyle(color: AppColors.primaryTextColorDarkMode),

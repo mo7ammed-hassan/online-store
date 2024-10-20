@@ -21,9 +21,11 @@ class BasicAppButton extends StatelessWidget {
           height ?? 50,
         ),
       ),
-      child: Text(
-        title,
-        style: AppTextStyle.textStyle18Medium,
+      child: FittedBox(
+        child: Text(
+          title,
+          style: AppTextStyle.textStyle18Medium,
+        ),
       ),
     );
   }

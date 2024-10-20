@@ -17,9 +17,9 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
   );
 
-  static const TextStyle textStyle24Medium = TextStyle(
+  static const TextStyle textStyle24Bold = TextStyle(
     fontSize: 24,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.bold,
   );
 
   static const TextStyle textStyle16Bold = TextStyle(

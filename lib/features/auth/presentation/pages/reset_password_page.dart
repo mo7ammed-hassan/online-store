@@ -36,7 +36,7 @@ class ResetPage extends StatelessWidget {
   Text _returnText() {
     return const Text(
       'We Sent you an Email to reset your password.',
-      style: AppTextStyle.textStyle24Medium,
+      style: AppTextStyle.textStyle24Bold,
       textAlign: TextAlign.center,
     );
   }
