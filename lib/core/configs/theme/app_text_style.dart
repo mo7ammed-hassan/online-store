@@ -6,14 +6,19 @@ class AppTextStyle {
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle textStyle14 = TextStyle(
-    fontSize: 14,
+  static const TextStyle textStyle15 = TextStyle(
+    fontSize: 15,
     fontWeight: FontWeight.w400,
     color: Colors.black,
   );
 
-  static const TextStyle textStyle16Medium = TextStyle(
-    fontSize: 16,
+  static const TextStyle textStyle18Medium = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const TextStyle textStyle24Medium = TextStyle(
+    fontSize: 24,
     fontWeight: FontWeight.w500,
   );
 

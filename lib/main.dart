@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_store/core/configs/theme/app_theme.dart';
-import 'package:online_store/features/splash/presentation/views/splash_view.dart';
+import 'package:online_store/features/splash/presentation/pages/splash_page.dart';
 
 void main() {
   runApp(
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const SplashView(),
+      home: const SplashPage(),
     );
   }
 }

@@ -23,7 +23,7 @@ class BasicAppButton extends StatelessWidget {
       ),
       child: Text(
         title,
-        style: AppTextStyle.textStyle16Medium,
+        style: AppTextStyle.textStyle18Medium,
       ),
     );
   }

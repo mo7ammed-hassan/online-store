@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:online_store/common/helper/navigation.dart';
+import 'package:online_store/common/helper/app_navigator.dart';
 import 'package:online_store/core/configs/assets/app_images.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
-import 'package:online_store/features/auth/presentation/views/signin.dart';
+import 'package:online_store/features/auth/presentation/pages/signin_page.dart';
 
-class SplashView extends StatefulWidget {
-  const SplashView({super.key});
+class SplashPage extends StatefulWidget {
+  const SplashPage({super.key});
 
   @override
-  State<SplashView> createState() => _SplashViewState();
+  State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashViewState extends State<SplashView>
+class _SplashPageState extends State<SplashPage>
     with SingleTickerProviderStateMixin {
   AnimationController? animationController;
   Animation? fadeAnimation;
@@ -59,7 +59,7 @@ class _SplashViewState extends State<SplashView>
   Future<void> redirect() async {
     await Future.delayed(const Duration(seconds: 4));
     context.pushReplacement(
-      const SigninView(),
+      const SigninPage(),
     );
   }
 }
