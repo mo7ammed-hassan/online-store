@@ -5,10 +5,10 @@ import 'package:online_store/common/widgets/basic_app_bar.dart';
 import 'package:online_store/common/widgets/basic_app_button.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
-import 'package:online_store/features/auth/presentation/pages/forgot_password_page.dart';
+import 'package:online_store/features/auth/presentation/pages/signin_page.dart';
 
-class EnterPasswordPage extends StatelessWidget {
-  const EnterPasswordPage({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,23 +22,53 @@ class EnterPasswordPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _signinText(),
+            _signupText(),
+            const SizedBox(height: AppPadding.defaultSpaceWidget),
+            _frirstNameField(),
+            const SizedBox(height: AppPadding.defaultSpaceWidget),
+            _lastNameField(),
+            const SizedBox(height: AppPadding.defaultSpaceWidget),
+            _emailField(),
             const SizedBox(height: AppPadding.defaultSpaceWidget),
             _passwordField(),
             const SizedBox(height: AppPadding.defaultSpaceWidget),
-            _continueButton(),
-            const SizedBox(height: AppPadding.defaultSpaceWidget),
-            _forgotPassword(context),
+            _continueButton(context),
+            const SizedBox(height: AppPadding.defaultSpaceWidget * 1.2),
+            _haveAccount(context),
           ],
         ),
       ),
     );
   }
 
-  Text _signinText() {
+  Text _signupText() {
     return const Text(
-      'Sign in',
+      'Create Account',
       style: AppTextStyle.textStyle32,
+    );
+  }
+
+  TextField _frirstNameField() {
+    return const TextField(
+      decoration: InputDecoration(
+        labelText: 'Firstname',
+      ),
+    );
+  }
+
+  TextField _lastNameField() {
+    return const TextField(
+      decoration: InputDecoration(
+        labelText: 'Lastname',
+      ),
+    );
+  }
+
+  TextField _emailField() {
+    return const TextField(
+      decoration: InputDecoration(
+        labelText: 'Email Address',
+      ),
     );
   }
 
@@ -50,29 +80,29 @@ class EnterPasswordPage extends StatelessWidget {
     );
   }
 
-  Widget _continueButton() {
+  Widget _continueButton(BuildContext context) {
     return BasicAppButton(
       title: 'Continue',
       onPressed: () {},
     );
   }
 
-  Widget _forgotPassword(BuildContext context) {
+  Widget _haveAccount(BuildContext context) {
     return RichText(
       text: TextSpan(
         children: [
           const TextSpan(
-            text: 'Forgot Password? ',
+            text: 'Already have an account? ',
             style: AppTextStyle.textStyle15,
           ),
           TextSpan(
-            text: 'Reset',
+            text: 'Sigin',
             style:
                 AppTextStyle.textStyle15.copyWith(fontWeight: FontWeight.bold),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                context.push(
-                  const ForgotPasswordPage(),
+                context.pushReplacement(
+                  const SigninPage(),
                 );
               },
           ),

@@ -6,6 +6,7 @@ import 'package:online_store/common/widgets/basic_app_button.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/auth/presentation/pages/enter_password_page.dart';
+import 'package:online_store/features/auth/presentation/pages/signup_page.dart';
 
 class SigninPage extends StatelessWidget {
   const SigninPage({super.key});
@@ -27,7 +28,7 @@ class SigninPage extends StatelessWidget {
             _emailField(),
             const SizedBox(height: AppPadding.defaultSpaceWidget),
             _continueButton(context),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppPadding.defaultSpaceWidget),
             _createAccount(context),
           ],
         ),
@@ -75,7 +76,9 @@ class SigninPage extends StatelessWidget {
                 AppTextStyle.textStyle15.copyWith(fontWeight: FontWeight.bold),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                // signup page
+                context.push(
+                  const SignupPage(),
+                );
               },
           ),
         ],

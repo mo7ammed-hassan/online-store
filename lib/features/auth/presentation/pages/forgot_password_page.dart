@@ -26,7 +26,7 @@ class ForgotPasswordPage extends StatelessWidget {
             _emailField(),
             const SizedBox(height: AppPadding.defaultSpaceWidget),
             _continueButton(context),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppPadding.defaultSpaceWidget),
           ],
         ),
       ),
