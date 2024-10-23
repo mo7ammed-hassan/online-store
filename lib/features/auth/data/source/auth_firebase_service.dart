@@ -1,11 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:online_store/core/utils/constants/user_constants.dart';
+import 'package:online_store/core/utils/constants/firebase_constants.dart';
 import 'package:online_store/features/auth/data/models/user_creation_req_model.dart';
 
 abstract class AuthFirebaseService {
   Future<Either> signup(UserCreationReqModel userCreation);
+  Future<Either> getAges();
 }
 
 class AuthFirebaseServiceImpl extends AuthFirebaseService {
@@ -19,7 +20,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       );
 
       await FirebaseFirestore.instance
-          .collection(UserConstants.userCollection)
+          .collection(FirebaseConstants.userCollection)
           .doc(firebaseAuth.user!.uid)
           .set({
         'firstName': userCreation.firstName,
@@ -39,6 +40,20 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       }
 
       return Left(message);
+    } catch (e) {
+      return const Left('There Was an Error, please try again');
+    }
+  }
+
+  @override
+  Future<Either> getAges() async {
+    try {
+      var data = await FirebaseFirestore.instance
+          .collection(FirebaseConstants.ageCollection)
+          .orderBy('value', descending: false)
+          .get();
+
+      return Right(data.docs);
     } catch (e) {
       return const Left('There Was an Error, please try again');
     }

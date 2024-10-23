@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppTextStyle {
+
+  AppTextStyle._();
   static const TextStyle textStyle32 = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.bold,
