@@ -3,6 +3,7 @@ import 'package:online_store/features/auth/data/repository/auth_repository_impl.
 import 'package:online_store/features/auth/data/source/auth_firebase_service.dart';
 import 'package:online_store/features/auth/domain/repository/auth_repository.dart';
 import 'package:online_store/features/auth/domain/use_case/get_ages.dart';
+import 'package:online_store/features/auth/domain/use_case/send_password_reset_email_use_case.dart';
 import 'package:online_store/features/auth/domain/use_case/signin_use_case.dart';
 import 'package:online_store/features/auth/domain/use_case/signup_use_case.dart';
 
@@ -28,5 +29,8 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<SigninUseCase>(
     SigninUseCase(),
+  );
+  getIt.registerSingleton<SendPasswordResetEmailUseCase>(
+    SendPasswordResetEmailUseCase(),
   );
 }

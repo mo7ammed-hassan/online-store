@@ -9,6 +9,7 @@ abstract class AuthFirebaseService {
   Future<Either> signup(UserCreationReqModel userCreation);
   Future<Either> signin(UserSigninReqModel userSignin);
   Future<Either> getAges();
+  Future<Either> sendPasswordResetEmail(String email);
 }
 
 class AuthFirebaseServiceImpl extends AuthFirebaseService {
@@ -76,6 +77,25 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         message = 'No user found for that email.';
       } else if (e.code == 'wrong-password') {
         message = 'Wrong password provided for that user.';
+      }
+
+      return Left(message);
+    } catch (e) {
+      return const Left('There Was an Error, please try again');
+    }
+  }
+
+  @override
+  Future<Either> sendPasswordResetEmail(String email) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      return const Right('Password reset email sent');
+    } on FirebaseAuthException catch (e) {
+      String message = '';
+      if (e.code == 'invalid-email') {
+        message = 'The email address is invalid.';
+      } else if (e.code == 'user-not-found') {
+        message = 'No user found for that email.';
       }
 
       return Left(message);
