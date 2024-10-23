@@ -6,8 +6,8 @@ import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/auth/presentation/pages/signin_page.dart';
 
-class ResetPage extends StatelessWidget {
-  const ResetPage({super.key});
+class PasswordResetEmailPage extends StatelessWidget {
+  const PasswordResetEmailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
