@@ -1,20 +1,35 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:online_store/common/helper/app_navigator.dart';
-import 'package:online_store/common/widgets/basic_app_bar.dart';
-import 'package:online_store/common/widgets/basic_app_button.dart';
+import 'package:online_store/common/widgets/appbar/basic_app_bar.dart';
+import 'package:online_store/common/widgets/button/basic_app_button.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
+import 'package:online_store/features/auth/data/models/user_creation_req_model.dart';
+import 'package:online_store/features/auth/presentation/pages/gender_and_age_selection_page.dart';
 import 'package:online_store/features/auth/presentation/pages/signin_page.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
+
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  final TextEditingController _firstNameCon = TextEditingController();
+
+  final TextEditingController _lastNameCon = TextEditingController();
+
+  final TextEditingController _emailCon = TextEditingController();
+
+  final TextEditingController _passwordCon = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const BasicAppBar(),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
           vertical: AppPadding.verticalPagePadding,
           horizontal: AppPadding.horizontalPagePadding,
@@ -49,32 +64,37 @@ class SignupPage extends StatelessWidget {
   }
 
   TextField _frirstNameField() {
-    return const TextField(
-      decoration: InputDecoration(
+    return TextField(
+      controller: _firstNameCon,
+      decoration: const InputDecoration(
         labelText: 'Firstname',
       ),
     );
   }
 
   TextField _lastNameField() {
-    return const TextField(
-      decoration: InputDecoration(
+    return TextField(
+      controller: _lastNameCon,
+      decoration: const InputDecoration(
         labelText: 'Lastname',
       ),
     );
   }
 
   TextField _emailField() {
-    return const TextField(
-      decoration: InputDecoration(
+    return TextField(
+      controller: _emailCon,
+      decoration: const InputDecoration(
         labelText: 'Email Address',
       ),
     );
   }
 
   TextField _passwordField() {
-    return const TextField(
-      decoration: InputDecoration(
+    return TextField(
+      controller: _passwordCon,
+      // obscureText: true,
+      decoration: const InputDecoration(
         labelText: 'Password',
       ),
     );
@@ -83,7 +103,18 @@ class SignupPage extends StatelessWidget {
   Widget _continueButton(BuildContext context) {
     return BasicAppButton(
       title: 'Continue',
-      onPressed: () {},
+      onPressed: () {
+        context.push(
+          GenderAndAgeSelectionPage(
+            userCreationReq: UserCreationReqModel(
+              firstName: _firstNameCon.text,
+              lastName: _lastNameCon.text,
+              email: _emailCon.text,
+              password: _passwordCon.text,
+            ),
+          ),
+        );
+      },
     );
   }
 

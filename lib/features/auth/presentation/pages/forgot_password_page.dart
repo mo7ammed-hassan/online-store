@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_store/common/helper/app_navigator.dart';
-import 'package:online_store/common/widgets/basic_app_bar.dart';
-import 'package:online_store/common/widgets/basic_app_button.dart';
+import 'package:online_store/common/widgets/appbar/basic_app_bar.dart';
+import 'package:online_store/common/widgets/button/basic_app_button.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/auth/presentation/pages/reset_password_page.dart';

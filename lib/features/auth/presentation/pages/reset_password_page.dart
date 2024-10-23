@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_store/common/helper/app_navigator.dart';
-import 'package:online_store/common/widgets/basic_app_button.dart';
+import 'package:online_store/common/widgets/button/basic_app_button.dart';
 import 'package:online_store/core/configs/assets/app_images.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';

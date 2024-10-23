@@ -1,11 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:online_store/common/helper/app_navigator.dart';
-import 'package:online_store/common/widgets/basic_app_bar.dart';
-import 'package:online_store/common/widgets/basic_app_button.dart';
+import 'package:online_store/common/widgets/appbar/basic_app_bar.dart';
+import 'package:online_store/common/widgets/button/basic_app_button.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/auth/presentation/pages/forgot_password_page.dart';
+import 'package:online_store/features/auth/presentation/pages/gender_and_age_selection_page.dart';
 
 class EnterPasswordPage extends StatelessWidget {
   const EnterPasswordPage({super.key});
@@ -26,7 +27,7 @@ class EnterPasswordPage extends StatelessWidget {
             const SizedBox(height: AppPadding.defaultSpaceWidget),
             _passwordField(),
             const SizedBox(height: AppPadding.defaultSpaceWidget),
-            _continueButton(),
+            _continueButton(context),
             const SizedBox(height: AppPadding.defaultSpaceWidget),
             _forgotPassword(context),
           ],
@@ -50,10 +51,12 @@ class EnterPasswordPage extends StatelessWidget {
     );
   }
 
-  Widget _continueButton() {
+  Widget _continueButton(BuildContext context) {
     return BasicAppButton(
       title: 'Continue',
-      onPressed: () {},
+      onPressed: () {
+        
+      },
     );
   }
 

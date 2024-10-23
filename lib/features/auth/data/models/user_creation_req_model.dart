@@ -4,14 +4,14 @@ class UserCreationReqModel {
   String? email;
   String? password;
   int? gender;
-  String age;
+  String? age;
 
   UserCreationReqModel({
     required this.firstName,
     required this.lastName,
     required this.email,
     required this.password,
-    required this.gender,
-    required this.age,
+    this.gender,
+    this.age,
   });
 }
