@@ -6,7 +6,6 @@ import 'package:online_store/common/widgets/button/basic_app_button.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/auth/presentation/pages/forgot_password_page.dart';
-import 'package:online_store/features/auth/presentation/pages/gender_and_age_selection_page.dart';
 
 class EnterPasswordPage extends StatelessWidget {
   const EnterPasswordPage({super.key});
