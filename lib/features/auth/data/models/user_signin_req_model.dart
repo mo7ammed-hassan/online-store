@@ -4,6 +4,6 @@ class UserSigninReqModel {
 
   UserSigninReqModel({
     required this.email,
-    required this.password,
+    this.password,
   });
 }

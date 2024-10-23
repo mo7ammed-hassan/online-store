@@ -77,6 +77,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       } else if (e.code == 'wrong-password') {
         message = 'Wrong password provided for that user.';
       }
+
       return Left(message);
     } catch (e) {
       return const Left('There Was an Error, please try again');
