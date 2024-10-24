@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/core/configs/theme/app_theme.dart';
+import 'package:online_store/features/splash/presentation/cubits/splash_cubit.dart';
 import 'package:online_store/features/splash/presentation/pages/splash_page.dart';
 import 'package:online_store/firebase_options.dart';
 import 'package:online_store/service_locator.dart';
@@ -21,13 +23,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Online Store',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      home: const SplashPage(),
+    return BlocProvider(
+      create: (context) => SplashCubit()..appStarted(),
+      child: MaterialApp(
+        title: 'Online Store',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: ThemeMode.system,
+        home: const SplashPage(),
+      ),
     );
   }
 }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/common/helper/app_navigator.dart';
 import 'package:online_store/core/configs/assets/app_images.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/features/auth/presentation/pages/signin_page.dart';
+import 'package:online_store/features/home/presentation/pages/home_page.dart';
+import 'package:online_store/features/splash/presentation/cubits/splash_cubit.dart';
+import 'package:online_store/features/splash/presentation/cubits/splash_state.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -40,17 +44,27 @@ class _SplashPageState extends State<SplashPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.primaryColor,
-      body: Center(
-        child: AnimatedBuilder(
-          animation: fadeAnimation!,
-          builder: (context, _) {
-            return Opacity(
-              opacity: fadeAnimation?.value,
-              child: Image.asset(AppImages.appLogo),
-            );
-          },
+    return BlocListener<SplashCubit, SplashState>(
+      listener: (context, state) {
+        if (state is UnAuthenticated) {
+          context.pushReplacement(const SigninPage());
+        }
+        if (state is Authenticated) {
+          context.pushReplacement(const HomePage());
+        }
+      },
+      child: Scaffold(
+        backgroundColor: AppColors.primaryColor,
+        body: Center(
+          child: AnimatedBuilder(
+            animation: fadeAnimation!,
+            builder: (context, _) {
+              return Opacity(
+                opacity: fadeAnimation?.value,
+                child: Image.asset(AppImages.appLogo),
+              );
+            },
+          ),
         ),
       ),
     );

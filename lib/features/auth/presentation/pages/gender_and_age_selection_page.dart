@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/common/cubits/button/button_state.dart';
 import 'package:online_store/common/cubits/button/button_state_cubit.dart';
+import 'package:online_store/common/helper/app_navigator.dart';
 import 'package:online_store/common/widgets/appbar/basic_app_bar.dart';
 import 'package:online_store/common/widgets/button/basic_reactive_button.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
@@ -13,6 +14,7 @@ import 'package:online_store/features/auth/presentation/cubits/age_selection_cub
 import 'package:online_store/features/auth/presentation/cubits/gender_selection_cubit.dart';
 import 'package:online_store/features/auth/presentation/cubits/get_ages_cubit.dart';
 import 'package:online_store/features/auth/presentation/pages/widgets/select_gender_section.dart';
+import 'package:online_store/features/home/presentation/pages/home_page.dart';
 
 import 'widgets/select_age_section.dart';
 
@@ -42,7 +44,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
         child: BlocListener<ButtonStateCubit, ButtonState>(
           listener: (context, state) {
             if (state is ButtonSuccessState) {
-              // TODO: Nav to Home Page
+              context.pushAndremove(const HomePage());
             }
 
             if (state is ButtonFailureState) {
