@@ -19,24 +19,36 @@ class HomePageHeader extends StatelessWidget {
       child: BlocBuilder<UserInfoDisplayCubit, UserInfoDisplayState>(
         builder: (context, state) {
           if (state is UserInfoLoading) {
-            return Container(
-              alignment: Alignment.center,
-              child: const CircularProgressIndicator(),
-            );
+            return _loadingUserInfoWidget();
           }
           if (state is UserInfoLoaded) {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _profileImage(),
-                _gender(state.userEntity),
-                _bag(),
-              ],
-            );
+            return _loadedUserInfoWidget(state);
           }
           return Container();
         },
       ),
+    );
+  }
+
+  Row _loadedUserInfoWidget(UserInfoLoaded state) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        _profileImage(),
+        _gender(state.userEntity),
+        _bag(),
+      ],
+    );
+  }
+
+  Row _loadingUserInfoWidget() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        _profileImage(),
+        _gender(null),
+        _bag(),
+      ],
     );
   }
 
@@ -54,7 +66,7 @@ class HomePageHeader extends StatelessWidget {
     );
   }
 
-  Widget _gender(CurrentUserEntity user) {
+  Widget _gender(CurrentUserEntity? user) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
@@ -65,7 +77,11 @@ class HomePageHeader extends StatelessWidget {
         children: [
           FittedBox(
             child: Text(
-              user.gender == 1 ? 'Men' : 'Women',
+              user != null
+                  ? user.gender == 1
+                      ? 'Men'
+                      : 'Women'
+                  : '...',
               style: AppTextStyle.textStyle16Bold,
             ),
           ),

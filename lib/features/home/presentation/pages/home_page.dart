@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               HomePageHeader(),
+              SizedBox(height: AppPadding.defaultSpaceWidget),
               SearchField(),
             ],
           ),
