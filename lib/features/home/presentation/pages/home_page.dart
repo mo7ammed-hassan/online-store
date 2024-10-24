@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/home/presentation/pages/widgets/home_page_header.dart';
+import 'package:online_store/features/home/presentation/pages/widgets/search_field.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,6 +18,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               HomePageHeader(),
+              SearchField(),
             ],
           ),
         ),
