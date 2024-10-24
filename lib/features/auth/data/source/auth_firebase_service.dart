@@ -123,7 +123,11 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
             (value) => value.data(),
           );
 
-      return Right(userData);
+      if (userData != null) {
+        return Right(userData);
+      } else {
+        return const Left('User not found');
+      }
     } catch (e) {
       return const Left('Please try again');
     }

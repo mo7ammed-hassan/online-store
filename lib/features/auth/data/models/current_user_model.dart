@@ -1,6 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
 import 'package:online_store/features/auth/domain/entities/current_user_entity.dart';
 
 class CurrentUserModel {
@@ -33,21 +30,19 @@ class CurrentUserModel {
 
   factory CurrentUserModel.fromMap(Map<String, dynamic> map) {
     return CurrentUserModel(
-      userId: map['userId'] as String,
-      firstName: map['firstName'] as String,
-      lastName: map['lastName'] as String,
+      userId: map['userId'] ?? '',
+      firstName: map['firstName'] ?? '',
+      lastName: map['lastName'] ?? '',
       email: map['email'] as String,
-      image: map['image'] as String,
+      image: map['image'] ?? '',
       gender: map['gender'] as int,
     );
   }
 
-  String toJson() => json.encode(toMap());
-
-  factory CurrentUserModel.fromJson(String source) =>
-      CurrentUserModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory CurrentUserModel.fromJson(Map<String, dynamic> data) {
+    return CurrentUserModel.fromMap(data);
+  }
 }
-
 
 extension CurrentUserXModel on CurrentUserModel {
   CurrentUserEntity toEntity() {

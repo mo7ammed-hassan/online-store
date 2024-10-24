@@ -45,3 +45,19 @@ class AuthRepositoryImpl extends AuthRepository {
     });
   }
 }
+
+/*
+
+
+
+
+
+
+ if (data is Map<String, dynamic>) {
+        return Right(CurrentUserModel.fromJson(data).toEntity());
+      } else {
+        return const Left('Invalid data format');
+      }
+
+
+ */

@@ -21,26 +21,28 @@ class GenderTitle extends StatelessWidget {
         onTap: () {
           context.read<GenderSelectionCubit>().selectGender(genderIndex);
         },
-        child: Container(
-          height: 60,
-          decoration: BoxDecoration(
-            color: context.read<GenderSelectionCubit>().selectedIndex ==
-                    genderIndex
-                ? AppColors.primaryColor
-                : AppColors.fillColorLightMode,
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Center(
-            child: Text(
-              gender,
-              style: AppTextStyle.textStyle17.copyWith(
-                color: context.read<GenderSelectionCubit>().selectedIndex ==
-                        genderIndex
-                    ? Colors.white
-                    : Colors.black,
+        child: BlocBuilder<GenderSelectionCubit, int>(
+          builder: (context, selectedIndex) {
+            return Container(
+              height: 60,
+              decoration: BoxDecoration(
+                color: selectedIndex == genderIndex
+                    ? AppColors.primaryColor
+                    : AppColors.fillColorLightMode,
+                borderRadius: BorderRadius.circular(30),
               ),
-            ),
-          ),
+              child: Center(
+                child: Text(
+                  gender,
+                  style: AppTextStyle.textStyle17.copyWith(
+                    color: selectedIndex == genderIndex
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+                ),
+              ),
+            );
+          },
         ),
       ),
     );

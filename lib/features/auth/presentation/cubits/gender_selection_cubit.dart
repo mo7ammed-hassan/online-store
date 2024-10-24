@@ -7,6 +7,6 @@ class GenderSelectionCubit extends Cubit<int> {
 
   void selectGender(int index) {
     selectedIndex = index;
-    emit(selectedIndex);
+    emit(index);
   }
 }
