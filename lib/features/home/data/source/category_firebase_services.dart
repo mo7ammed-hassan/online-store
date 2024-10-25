@@ -10,12 +10,18 @@ class CategoryFirebaseServicesImpl extends CategoryFirebaseServices {
   @override
   Future<Either> getCategories() async {
     try {
-      QuerySnapshot<Map<String, dynamic>> categories = await FirebaseFirestore
-          .instance
+      var categories = await FirebaseFirestore.instance
           .collection(FirebaseConstants.categoryCollection)
+          .orderBy('title', descending: true)
           .get();
 
-      return Right(categories);
+      return Right(
+        categories.docs
+            .map(
+              (e) => e.data(),
+            )
+            .toList(),
+      );
     } catch (e) {
       return const Left('Please try again');
     }
