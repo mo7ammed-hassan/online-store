@@ -9,9 +9,13 @@ import 'package:online_store/features/auth/domain/use_case/send_password_reset_e
 import 'package:online_store/features/auth/domain/use_case/signin_use_case.dart';
 import 'package:online_store/features/auth/domain/use_case/signup_use_case.dart';
 import 'package:online_store/features/home/data/repository/category_repository_impl.dart';
+import 'package:online_store/features/home/data/repository/product_repository_impl.dart';
 import 'package:online_store/features/home/data/source/category_firebase_services.dart';
+import 'package:online_store/features/home/data/source/product_firebase_service.dart';
 import 'package:online_store/features/home/domain/repository/category_repository.dart';
-import 'package:online_store/features/home/domain/use_case.dart/get_categories_use_case.dart';
+import 'package:online_store/features/home/domain/repository/product_repository.dart';
+import 'package:online_store/features/home/domain/use_case.dart/category/get_categories_use_case.dart';
+import 'package:online_store/features/home/domain/use_case.dart/product/get_top_selling_use_case.dart';
 
 final getIt = GetIt.instance;
 
@@ -23,6 +27,9 @@ Future<void> initializeDependencies() async {
   getIt.registerSingleton<CategoryFirebaseServices>(
     CategoryFirebaseServicesImpl(),
   );
+  getIt.registerSingleton<ProductFirebaseService>(
+    ProductFirebaseServiceImpl(),
+  );
 
   // Repositories
   getIt.registerSingleton<AuthRepository>(
@@ -30,6 +37,9 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<CategoryRepository>(
     CategoryRepositoryImpl(),
+  );
+  getIt.registerSingleton<ProductRepository>(
+    ProductRepositoryImpl(),
   );
 
   // UseCases
@@ -53,5 +63,8 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<GetCategoriesUseCase>(
     GetCategoriesUseCase(),
+  );
+  getIt.registerSingleton<GetTopSellingUseCase>(
+    GetTopSellingUseCase(),
   );
 }

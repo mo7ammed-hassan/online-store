@@ -1,4 +1,4 @@
-import 'package:online_store/features/home/domain/entity/category_entity.dart';
+import 'package:online_store/features/home/domain/entity/category/category_entity.dart';
 
 abstract class CategoriesDisplayState {}
 

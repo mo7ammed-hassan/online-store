@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:online_store/features/home/domain/use_case.dart/get_categories_use_case.dart';
+import 'package:online_store/features/home/domain/use_case.dart/category/get_categories_use_case.dart';
 import 'package:online_store/features/home/presentation/cubits/categories/categories_display_state.dart';
 import 'package:online_store/service_locator.dart';
 

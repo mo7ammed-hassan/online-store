@@ -6,8 +6,8 @@ import 'package:online_store/core/configs/assets/app_vectors.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/features/auth/domain/entities/current_user_entity.dart';
-import 'package:online_store/features/home/presentation/cubits/user_info_display_cubit.dart';
-import 'package:online_store/features/home/presentation/cubits/user_info_display_state.dart';
+import 'package:online_store/features/home/presentation/cubits/user/user_info_display_cubit.dart';
+import 'package:online_store/features/home/presentation/cubits/user/user_info_display_state.dart';
 
 class HomePageHeader extends StatelessWidget {
   const HomePageHeader({super.key});

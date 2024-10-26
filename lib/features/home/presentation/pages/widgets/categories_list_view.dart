@@ -4,7 +4,7 @@ import 'package:online_store/common/helper/images/image_display.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
-import 'package:online_store/features/home/domain/entity/category_entity.dart';
+import 'package:online_store/features/home/domain/entity/category/category_entity.dart';
 import 'package:online_store/features/home/presentation/cubits/categories/categories_display_cubit.dart';
 import 'package:online_store/features/home/presentation/cubits/categories/categories_display_state.dart';
 import 'package:cached_network_image/cached_network_image.dart';

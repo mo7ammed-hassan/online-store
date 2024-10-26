@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:online_store/features/home/domain/entity/category_entity.dart';
+import 'package:online_store/features/home/domain/entity/category/category_entity.dart';
 
 class CategoryModel {
   final String categoryId;

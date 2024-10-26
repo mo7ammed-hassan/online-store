@@ -7,7 +7,7 @@ class ButtonStateCubit extends Cubit<ButtonState> {
   ButtonStateCubit() : super(ButtonInitialState());
 
   Future<void> execute(
-      {required dynamic params, required Usecase useCase}) async {
+      {required dynamic params, required UseCase useCase}) async {
     emit(ButtonLoadingState());
 
     try {
