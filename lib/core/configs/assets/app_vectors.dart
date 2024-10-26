@@ -10,5 +10,4 @@ class AppVectors {
   static const String bagVector = '${_basePath}bag$_format';
   static const String arrowDown = '${_basePath}arrow_down$_format';
   static const String search = '${_basePath}search$_format';
-
 }
