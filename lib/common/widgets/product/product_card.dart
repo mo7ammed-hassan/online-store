@@ -1,16 +1,20 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:online_store/common/helper/images/image_display.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
+import 'package:online_store/features/home/domain/entity/product/product_entity.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final ProductEntity product;
+  const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {},
       child: AspectRatio(
-        aspectRatio: 159 / 283,
+        aspectRatio: 175 / 283,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -26,9 +30,13 @@ class ProductCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12),
-                    image: const DecorationImage(
+                    image: DecorationImage(
                       fit: BoxFit.fill,
-                      image: AssetImage('assets/images/produvt.png'),
+                      image: CachedNetworkImageProvider(
+                        ImageDisplayHelper.generateProductImageURL(
+                          product.images[0],
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -40,8 +48,8 @@ class ProductCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Men\'s Harrington Jacket',
+                      Text(
+                        product.title,
                         maxLines: 1,
                         style: AppTextStyle.textStyle14,
                         overflow: TextOverflow.ellipsis,
@@ -53,17 +61,21 @@ class ProductCard extends StatelessWidget {
                         children: [
                           FittedBox(
                             child: Text(
-                              '\$148.88',
+                              product.discountedPrice == 0
+                                  ? '\$${product.price}'
+                                  : '\$${product.discountedPrice}',
                               style: AppTextStyle.textStyle14
-                                  .copyWith(fontWeight: FontWeight.w500),
+                                  .copyWith(fontWeight: FontWeight.w600),
                             ),
                           ),
                           const SizedBox(width: 14),
                           FittedBox(
                             child: Text(
-                              '\$200.88',
+                              product.discountedPrice == 0
+                                  ? ''
+                                  : '\$${product.price}',
                               style: AppTextStyle.textStyle14.copyWith(
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w800,
                                 color: AppColors.hintTextColorLightMode,
                                 decoration: TextDecoration.lineThrough,
                                 decorationColor:

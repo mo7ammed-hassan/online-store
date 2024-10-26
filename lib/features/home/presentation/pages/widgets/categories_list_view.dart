@@ -35,6 +35,7 @@ class Categories extends StatelessWidget {
       height: 110,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
+        //clipBehavior: Clip.none,
         padding: const EdgeInsets.symmetric(horizontal: 12),
         separatorBuilder: (context, index) =>
             const SizedBox(width: AppPadding.defaultSpaceWidget / 2),
