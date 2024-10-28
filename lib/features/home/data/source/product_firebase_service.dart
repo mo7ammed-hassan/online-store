@@ -38,8 +38,6 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
               ),
             ),
           )
-          .orderBy('title', descending: false)
-          .limit(3)
           .get();
 
       return Right(

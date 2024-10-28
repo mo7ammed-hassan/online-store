@@ -11,27 +11,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
-            horizontal: AppPadding.horizontalPagePadding,
-          ),
-          child: Column(
-            children: [
-              HomePageHeader(),
-              SizedBox(height: AppPadding.defaultSpaceWidget),
-              SearchField(),
-              SizedBox(height: AppPadding.defaultSpaceWidget),
-              CategoriesSection(),
-              SizedBox(height: AppPadding.defaultSpaceWidget),
-              TopSellingSection(),
-              SizedBox(height: AppPadding.defaultSpaceWidget),
-              NewInSection(),
-              SizedBox(height: 10),
-            ],
-          ),
-        ),
+    return const SingleChildScrollView(
+      child: Column(
+        children: [
+          HomePageHeader(),
+          SizedBox(height: AppPadding.defaultSpaceWidget),
+          SearchField(),
+          SizedBox(height: AppPadding.defaultSpaceWidget),
+          CategoriesSection(),
+          SizedBox(height: AppPadding.defaultSpaceWidget),
+          TopSellingSection(),
+          SizedBox(height: AppPadding.defaultSpaceWidget),
+          NewInSection(),
+          SizedBox(height: 10),
+        ],
       ),
     );
   }

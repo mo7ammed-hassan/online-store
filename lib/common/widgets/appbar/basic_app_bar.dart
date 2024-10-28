@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:online_store/common/helper/app_navigator.dart';
+import 'package:online_store/core/configs/assets/app_vectors.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 
 class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -39,10 +41,9 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                   color: AppColors.fillColorLightMode,
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(
-                  Icons.arrow_back_ios_new,
-                  size: 15,
-                  color: Colors.black,
+                child: SvgPicture.asset(
+                  fit: BoxFit.none,
+                  AppVectors.arrowBack,
                 ),
               ),
             ),
