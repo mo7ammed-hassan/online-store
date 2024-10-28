@@ -59,28 +59,23 @@ class ProductCard extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          FittedBox(
-                            child: Text(
-                              product.discountedPrice == 0
-                                  ? '\$${product.price}'
-                                  : '\$${product.discountedPrice}',
-                              style: AppTextStyle.textStyle14
-                                  .copyWith(fontWeight: FontWeight.w600),
-                            ),
+                          Text(
+                            product.discountedPrice == 0
+                                ? '\$${product.price}'
+                                : '\$${product.discountedPrice}',
+                            style: AppTextStyle.textStyle14
+                                .copyWith(fontWeight: FontWeight.w600),
                           ),
                           const SizedBox(width: 14),
-                          FittedBox(
-                            child: Text(
-                              product.discountedPrice == 0
-                                  ? ''
-                                  : '\$${product.price}',
-                              style: AppTextStyle.textStyle14.copyWith(
-                                fontWeight: FontWeight.w800,
-                                color: AppColors.hintTextColorLightMode,
-                                decoration: TextDecoration.lineThrough,
-                                decorationColor:
-                                    AppColors.hintTextColorLightMode,
-                              ),
+                          Text(
+                            product.discountedPrice == 0
+                                ? ''
+                                : '\$${product.price}',
+                            style: AppTextStyle.textStyle14.copyWith(
+                              fontWeight: FontWeight.w800,
+                              color: AppColors.hintTextColorLightMode,
+                              decoration: TextDecoration.lineThrough,
+                              decorationColor: AppColors.hintTextColorLightMode,
                             ),
                           ),
                         ],

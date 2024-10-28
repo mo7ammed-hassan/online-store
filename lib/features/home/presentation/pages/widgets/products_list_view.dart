@@ -39,7 +39,7 @@ class Products extends StatelessWidget {
         separatorBuilder: (context, index) => const SizedBox(
           width: 14,
         ),
-        itemCount: products.length,
+        itemCount: 3,
       ),
     );
   }

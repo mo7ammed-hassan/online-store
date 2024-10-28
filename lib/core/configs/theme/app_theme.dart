@@ -32,7 +32,7 @@ class AppTheme {
         ),
       ),
     ),
-    
+   
   );
 
   static ThemeData darkTheme = ThemeData(
