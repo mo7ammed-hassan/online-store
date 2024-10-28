@@ -20,6 +20,7 @@ class AllCategoriesPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: AppPadding.horizontalPagePadding,
+            vertical: AppPadding.horizontalPagePadding,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
