@@ -15,6 +15,7 @@ import 'package:online_store/features/home/data/source/product_firebase_service.
 import 'package:online_store/features/home/domain/repository/category_repository.dart';
 import 'package:online_store/features/home/domain/repository/product_repository.dart';
 import 'package:online_store/features/home/domain/use_case.dart/category/get_categories_use_case.dart';
+import 'package:online_store/features/home/domain/use_case.dart/product/get_new_in_use_case.dart';
 import 'package:online_store/features/home/domain/use_case.dart/product/get_top_selling_use_case.dart';
 
 final getIt = GetIt.instance;
@@ -66,5 +67,8 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<GetTopSellingUseCase>(
     GetTopSellingUseCase(),
+  );
+  getIt.registerSingleton<GetNewInUseCase>(
+    GetNewInUseCase(),
   );
 }
