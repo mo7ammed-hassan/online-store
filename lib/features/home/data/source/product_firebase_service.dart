@@ -5,6 +5,7 @@ import 'package:online_store/core/utils/constants/firebase_constants.dart';
 abstract class ProductFirebaseService {
   Future<Either> getTopSelling();
   Future<Either> getNewIn();
+  Future<Either> getProductsByCategoryId({required String categoryId});
 }
 
 class ProductFirebaseServiceImpl extends ProductFirebaseService {
@@ -38,6 +39,22 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
               ),
             ),
           )
+          .get();
+
+      return Right(
+        returnedData.docs.map((e) => e.data()).toList(),
+      );
+    } catch (e) {
+      return const Left('There was an error');
+    }
+  }
+
+  @override
+  Future<Either> getProductsByCategoryId({required String categoryId}) async {
+    try {
+      var returnedData = await FirebaseFirestore.instance
+          .collection(FirebaseConstants.productCollection)
+          .where('categoryId', isEqualTo: categoryId)
           .get();
 
       return Right(

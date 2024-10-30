@@ -23,14 +23,14 @@ class Categories extends StatelessWidget {
           );
         }
         if (state is CategoriesLoaded) {
-          return _categoriesListView(state.categories);
+          return _categoriesList(state.categories);
         }
         return Container();
       },
     );
   }
 
-  SizedBox _categoriesListView(List<CategoryEntity> categories) {
+  SizedBox _categoriesList(List<CategoryEntity> categories) {
     return SizedBox(
       height: 110,
       child: ListView.separated(

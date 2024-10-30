@@ -5,15 +5,16 @@ import 'package:online_store/core/usecase.dart/usecase.dart';
 class ProductsDisplayCubit extends Cubit<ProductsDisplayState> {
   final UseCase useCase;
   ProductsDisplayCubit({required this.useCase}) : super(ProductsInitialState());
-
-  void displayProducts() async {
+  int length = 0;
+  void displayProducts({dynamic params}) async {
     emit(ProductsLoading());
-    var returnedData = await useCase.call();
+    var returnedData = await useCase.call(params: params);
     returnedData.fold((error) {
       emit(
         LoadProductsFailure(),
       );
     }, (data) {
+      length = data.length;
       emit(
         ProductsLoaded(products: data),
       );
