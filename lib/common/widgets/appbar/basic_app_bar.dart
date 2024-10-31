@@ -23,6 +23,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: backgroundColor ?? Colors.transparent,
       elevation: 0,
+      automaticallyImplyLeading: false,
       centerTitle: true,
       titleSpacing: 12,
       title: title ?? const Text(''),
