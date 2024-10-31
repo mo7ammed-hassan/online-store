@@ -9,6 +9,7 @@ class AppVectors {
   static const String resetVector = '${_basePath}reset$_format';
   static const String bagVector = '${_basePath}bag$_format';
   static const String arrowDown = '${_basePath}arrow_down$_format';
+  static const String arrowDownBlack = '${_basePath}arrow_down_black$_format';
   static const String arrowBack = '${_basePath}arrow_back$_format';
   static const String search = '${_basePath}search$_format';
 }

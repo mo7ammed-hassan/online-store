@@ -7,8 +7,8 @@ class AppBottomSheet {
       context: context,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(25),
-          topRight: Radius.circular(25),
+          topLeft: Radius.circular(23),
+          topRight: Radius.circular(23),
         ),
       ),
       backgroundColor: AppColors.lightModeBackgroundColor,

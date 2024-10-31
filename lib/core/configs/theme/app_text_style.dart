@@ -11,6 +11,10 @@ class AppTextStyle {
     fontSize: 24,
     fontWeight: FontWeight.w700,
   );
+  static const TextStyle textStyle24Medium = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+  );
 
   static const TextStyle textStyle15 = TextStyle(
     fontSize: 15,
@@ -34,9 +38,14 @@ class AppTextStyle {
     fontWeight: FontWeight.bold,
   );
 
+  static const TextStyle textStyle16Medium = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
+
   static const TextStyle textStyle16Bold = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w500,
   );
 
   static const TextStyle textStyle16 = TextStyle(

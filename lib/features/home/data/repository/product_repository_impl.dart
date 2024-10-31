@@ -60,4 +60,24 @@ class ProductRepositoryImpl extends ProductRepository {
       },
     );
   }
+
+  @override
+  Future<Either> getProductsByTitle({required String title}) async {
+    var returnedData = await getIt
+        .get<ProductFirebaseService>()
+        .getProductsByTitle(title: title);
+
+    return returnedData.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        return Right(
+          List.from(data)
+              .map((e) => ProductModel.fromMap(e).toEntity())
+              .toList(),
+        );
+      },
+    );
+  }
 }

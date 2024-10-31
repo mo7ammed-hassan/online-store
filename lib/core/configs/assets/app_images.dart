@@ -5,8 +5,9 @@ class AppImages {
   static const String appLogo = '${baseUrl}logo$format';
   static const String resetLogo = '${baseUrl}reset$format';
   static const String userVector = '${baseUrl}user_vector.jpg';
+  static const String searchFilter = '${baseUrl}search_filter.png';
 
-  static String getImagePath(String imageName) {
-    return '$baseUrl$imageName$format';
-  }
+  // static String getImagePath(String imageName) {
+  //   return '$baseUrl$imageName$format';
+  // }
 }

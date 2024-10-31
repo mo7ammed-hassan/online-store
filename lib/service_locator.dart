@@ -17,6 +17,7 @@ import 'package:online_store/features/home/domain/repository/product_repository.
 import 'package:online_store/features/home/domain/use_case.dart/category/get_categories_use_case.dart';
 import 'package:online_store/features/home/domain/use_case.dart/product/get_new_in_use_case.dart';
 import 'package:online_store/features/home/domain/use_case.dart/product/get_products_by_category_id_use_case.dart';
+import 'package:online_store/features/home/domain/use_case.dart/product/get_products_by_title_use_case.dart';
 import 'package:online_store/features/home/domain/use_case.dart/product/get_top_selling_use_case.dart';
 
 final getIt = GetIt.instance;
@@ -74,5 +75,8 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<GetProductsByCategoryIdUseCase>(
     GetProductsByCategoryIdUseCase(),
+  );
+  getIt.registerSingleton<GetProductsByTitleUseCase>(
+    GetProductsByTitleUseCase(),
   );
 }

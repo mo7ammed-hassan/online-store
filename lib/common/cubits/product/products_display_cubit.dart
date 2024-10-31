@@ -20,4 +20,8 @@ class ProductsDisplayCubit extends Cubit<ProductsDisplayState> {
       );
     });
   }
+
+  void displayInitial() {
+    emit(ProductsInitialState());
+  }
 }
