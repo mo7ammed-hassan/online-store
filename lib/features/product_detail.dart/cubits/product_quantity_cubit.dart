@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class QuantityProductCubit extends Cubit<int> {
-  QuantityProductCubit() : super(1);
+class ProductQuantityCubit extends Cubit<int> {
+  ProductQuantityCubit() : super(1);
 
   void addToBag() => emit(state + 1);
 
