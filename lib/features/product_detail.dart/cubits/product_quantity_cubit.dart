@@ -6,7 +6,7 @@ class ProductQuantityCubit extends Cubit<int> {
   void addToBag() => emit(state + 1);
 
   void removeFromBag() {
-    if (state > 0) {
+    if (state > 1) {
       emit(state - 1);
     }
   }
