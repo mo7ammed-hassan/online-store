@@ -8,11 +8,13 @@ class BasicReactiveButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
   final double? height;
+  final Widget? content;
   const BasicReactiveButton({
     super.key,
-    required this.title,
+    this.title = '',
     required this.onPressed,
     this.height,
+    this.content,
   });
 
   @override
@@ -36,12 +38,13 @@ class BasicReactiveButton extends StatelessWidget {
           height ?? 50,
         ),
       ),
-      child: FittedBox(
-        child: Text(
-          title,
-          style: AppTextStyle.textStyle18Medium,
-        ),
-      ),
+      child: content ??
+          FittedBox(
+            child: Text(
+              title,
+              style: AppTextStyle.textStyle18Medium,
+            ),
+          ),
     );
   }
 

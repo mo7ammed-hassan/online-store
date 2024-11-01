@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:online_store/common/cubits/button/button_state_cubit.dart';
 import 'package:online_store/common/widgets/appbar/basic_app_bar.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/features/home/domain/entity/product/product_entity.dart';
@@ -25,6 +26,9 @@ class ProductDetailPage extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ProductSizeSelectionCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ButtonStateCubit(),
         ),
       ],
       child: Scaffold(
