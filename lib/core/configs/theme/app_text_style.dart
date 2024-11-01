@@ -57,9 +57,13 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
   );
 
+  static const TextStyle textStyle18ExtraBold = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w800,
+  );
   static const TextStyle textStyle18Bold = TextStyle(
     fontSize: 18,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w700,
   );
 
   static const TextStyle textStyle17 = TextStyle(

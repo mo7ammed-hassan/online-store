@@ -22,7 +22,7 @@ class ProductDetailPage extends StatelessWidget {
       child: Scaffold(
         appBar: _appBar(),
         body: ProductDetailBody(product: product),
-        bottomNavigationBar: const AddToBag(),
+        bottomNavigationBar: AddToBag(product: product),
       ),
     );
   }

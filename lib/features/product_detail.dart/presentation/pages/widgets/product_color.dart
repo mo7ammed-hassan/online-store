@@ -13,11 +13,10 @@ class SelectedColor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasicContainerDecoration(
-      
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('Color', style: AppTextStyle.textStyle18Medium),
+          const Text('Color', style: AppTextStyle.textStyle18Bold),
           Row(
             children: [
               Container(

@@ -19,7 +19,7 @@ class ProductQuantity extends StatelessWidget {
         children: [
           const Text(
             'Quantity',
-            style: AppTextStyle.textStyle18Medium,
+            style: AppTextStyle.textStyle18Bold,
           ),
           Row(
             children: [

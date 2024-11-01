@@ -16,7 +16,7 @@ class SelectedSize extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('Size', style: AppTextStyle.textStyle18Medium),
+          const Text('Size', style: AppTextStyle.textStyle18Bold),
           Row(
             children: [
               Text(product.sizes[0], style: AppTextStyle.textStyle18Bold),
