@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/home/domain/entity/product/product_entity.dart';
 import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/product_images_list.dart';
-import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/product_color.dart';
+import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/selected_colors.dart';
 import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/product_price.dart';
 import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/product_quantity.dart';
 import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/product_title.dart';

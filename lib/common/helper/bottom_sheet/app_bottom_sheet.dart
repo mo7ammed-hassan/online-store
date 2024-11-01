@@ -16,6 +16,12 @@ class AppBottomSheet {
       builder: (_) {
         return widget;
       },
+      sheetAnimationStyle: AnimationStyle(
+        duration: const Duration(milliseconds: 500),
+        reverseDuration: const Duration(milliseconds: 400),
+        curve: Curves.fastLinearToSlowEaseIn,
+        reverseCurve: Curves.fastLinearToSlowEaseIn,
+      ),
     );
   }
 }
