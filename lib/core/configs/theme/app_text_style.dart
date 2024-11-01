@@ -45,7 +45,11 @@ class AppTextStyle {
 
   static const TextStyle textStyle16Bold = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle textStyle16Black = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w900,
   );
 
   static const TextStyle textStyle16 = TextStyle(

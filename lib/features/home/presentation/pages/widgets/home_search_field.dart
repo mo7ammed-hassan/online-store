@@ -11,7 +11,6 @@ class HomeSearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      readOnly: true,
       onTap: () {
         context.push(const SearchPage());
       },

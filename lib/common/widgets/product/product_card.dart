@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:online_store/common/helper/app_navigator.dart';
 import 'package:online_store/common/helper/images/image_display.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/features/home/domain/entity/product/product_entity.dart';
+import 'package:online_store/features/product_detail.dart/presentation/pages/product_detail_page.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductEntity product;
@@ -12,7 +14,11 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        context.push(ProductDetailPage(
+          product: product,
+        ));
+      },
       child: AspectRatio(
         aspectRatio: 175 / 283,
         child: Container(

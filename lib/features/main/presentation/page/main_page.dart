@@ -10,6 +10,8 @@ class MainPage extends StatelessWidget {
   static const List<Widget> _pages = <Widget>[
     HomePage(),
     SizedBox(),
+    SizedBox(),
+    SizedBox(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -60,7 +62,6 @@ class MainPage extends StatelessWidget {
                 label: 'Notification',
               ),
               BottomNavigationBarItem(
-                backgroundColor: Colors.red,
                 icon: generateBtnBarIcon('order', 2, state),
                 label: 'Orders',
               ),
