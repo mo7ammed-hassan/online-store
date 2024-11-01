@@ -44,16 +44,8 @@ class SelectedSize extends StatelessWidget {
                 const SizedBox(
                   width: AppPadding.horizontalPagePadding,
                 ),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    maxHeight: 23,
-                    minWidth: 23,
-                  ),
-                  child: FittedBox(
-                    child: SvgPicture.asset(
-                      AppVectors.arrowDownBlack,
-                    ),
-                  ),
+                SvgPicture.asset(
+                  AppVectors.arrowDownBlack,
                 ),
               ],
             )

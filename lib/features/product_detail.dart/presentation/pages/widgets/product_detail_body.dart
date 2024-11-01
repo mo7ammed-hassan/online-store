@@ -36,7 +36,6 @@ class ProductDetailBody extends StatelessWidget {
           SelectedColor(product: product),
           const SizedBox(height: AppPadding.horizontalPagePadding),
           ProductQuantity(product: product),
-          const SizedBox(height: AppPadding.horizontalPagePadding),
         ],
       ),
     );
