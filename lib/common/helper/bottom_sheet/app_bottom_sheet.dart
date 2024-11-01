@@ -18,7 +18,7 @@ class AppBottomSheet {
       },
       sheetAnimationStyle: AnimationStyle(
         duration: const Duration(milliseconds: 500),
-        reverseDuration: const Duration(milliseconds: 400),
+        reverseDuration: const Duration(milliseconds: 500),
         curve: Curves.fastLinearToSlowEaseIn,
         reverseCurve: Curves.fastLinearToSlowEaseIn,
       ),

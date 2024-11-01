@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:online_store/common/helper/app_navigator.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/home/domain/entity/product/product_entity.dart';
-import 'package:online_store/features/product_detail.dart/cubits/product_color_selection_cubit.dart';
+import 'package:online_store/features/product_detail.dart/cubits/product_size_selection_cubit.dart';
 
-class ProductColors extends StatelessWidget {
+class ProductSizes extends StatelessWidget {
   final ProductEntity product;
-  const ProductColors({super.key, required this.product});
+  const ProductSizes({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class ProductColors extends StatelessWidget {
               children: [
                 const Center(
                   child: Text(
-                    'Color',
+                    'Size',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                   ),
                 ),
@@ -34,7 +35,9 @@ class ProductColors extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: const Icon(Icons.close),
+                    icon: const Icon(
+                      Icons.close,
+                    ),
                   ),
                 )
               ],
@@ -44,15 +47,16 @@ class ProductColors extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               shrinkWrap: true,
-              itemCount: product.colors.length,
+              itemCount: product.sizes.length,
               itemBuilder: (context, index) {
-                return BlocBuilder<ProductColorsSelectionCubit, int>(
+                return BlocBuilder<ProductSizeSelectionCubit, int>(
                   builder: (context, state) {
                     return GestureDetector(
                       onTap: () {
                         context
-                            .read<ProductColorsSelectionCubit>()
-                            .selectColor(index);
+                            .read<ProductSizeSelectionCubit>()
+                            .selectSize(index);
+                        context.pop();
                       },
                       child: Container(
                         padding: const EdgeInsets.all(20),
@@ -66,41 +70,22 @@ class ProductColors extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              product.colors[index].title,
+                              product.sizes[index],
                               style: AppTextStyle.textStyle18Bold.copyWith(
                                 color: state == index
                                     ? Colors.white
                                     : Colors.black,
                               ),
                             ),
-                            Row(
-                              children: [
-                                Container(
-                                  height: 20,
-                                  width: 20,
-                                  decoration: BoxDecoration(
-                                    color: Color.fromRGBO(
-                                      product.colors[index].rgb[0],
-                                      product.colors[index].rgb[1],
-                                      product.colors[index].rgb[2],
-                                      1,
-                                    ),
-                                    shape: BoxShape.circle,
+                            state == index
+                                ? const Icon(
+                                    Icons.check,
+                                    color: Colors.white,
+                                    size: 30,
+                                  )
+                                : const SizedBox(
+                                    width: 20,
                                   ),
-                                ),
-                                const SizedBox(
-                                  width: AppPadding.horizontalPagePadding,
-                                ),
-                                state == index
-                                    ? const Icon(
-                                        Icons.check,
-                                        color: Colors.white,
-                                      )
-                                    : const SizedBox(
-                                        width: 20,
-                                      ),
-                              ],
-                            )
                           ],
                         ),
                       ),

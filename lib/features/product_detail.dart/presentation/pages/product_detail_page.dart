@@ -5,6 +5,7 @@ import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/features/home/domain/entity/product/product_entity.dart';
 import 'package:online_store/features/product_detail.dart/cubits/product_color_selection_cubit.dart';
 import 'package:online_store/features/product_detail.dart/cubits/product_quantity_cubit.dart';
+import 'package:online_store/features/product_detail.dart/cubits/product_size_selection_cubit.dart';
 import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/add_to_bag.dart';
 import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/product_detail_body.dart';
 
@@ -21,6 +22,9 @@ class ProductDetailPage extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ProductColorsSelectionCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ProductSizeSelectionCubit(),
         ),
       ],
       child: Scaffold(

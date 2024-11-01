@@ -49,9 +49,13 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                         color: AppColors.fillColorLightMode,
                         shape: BoxShape.circle,
                       ),
-                      child: SvgPicture.asset(
-                        fit: BoxFit.none,
-                        AppVectors.arrowBack,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: SvgPicture.asset(
+                          AppVectors.arrowBack,
+                          height: 20, // Set desired height
+                          width: 20,
+                        ),
                       ),
                     ),
                   ),

@@ -8,7 +8,7 @@ import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/home/domain/entity/product/product_entity.dart';
 import 'package:online_store/features/product_detail.dart/cubits/product_color_selection_cubit.dart';
-import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/product_colors.dart.dart';
+import 'package:online_store/features/product_detail.dart/presentation/pages/widgets/product_colors.dart';
 
 class SelectedColor extends StatelessWidget {
   final ProductEntity product;
@@ -53,9 +53,16 @@ class SelectedColor extends StatelessWidget {
                 const SizedBox(
                   width: AppPadding.horizontalPagePadding,
                 ),
-                SvgPicture.asset(
-                  AppVectors.arrowDownBlack,
-                  fit: BoxFit.scaleDown,
+                ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    maxHeight: 23,
+                    minWidth: 23,
+                  ),
+                  child: FittedBox(
+                    child: SvgPicture.asset(
+                      AppVectors.arrowDownBlack,
+                    ),
+                  ),
                 ),
               ],
             ),
