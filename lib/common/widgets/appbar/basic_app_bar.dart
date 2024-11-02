@@ -27,6 +27,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       titleSpacing: 12,
       title: title ?? const Text(''),
+      scrolledUnderElevation: 0,
       actions: [
         action ?? Container(),
       ],

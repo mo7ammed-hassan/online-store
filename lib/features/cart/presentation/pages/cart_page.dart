@@ -24,6 +24,7 @@ class CartPage extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: AppPadding.horizontalPagePadding,
+            vertical: 8,
           ),
           child: CartPageBody(),
         ),
