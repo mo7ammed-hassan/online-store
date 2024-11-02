@@ -6,6 +6,7 @@ import 'package:online_store/core/configs/assets/app_vectors.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/features/auth/domain/entities/current_user_entity.dart';
+import 'package:online_store/features/cart/presentation/pages/cart_page.dart';
 import 'package:online_store/features/home/presentation/cubits/user/user_info_display_cubit.dart';
 import 'package:online_store/features/home/presentation/cubits/user/user_info_display_state.dart';
 
@@ -19,10 +20,10 @@ class HomePageHeader extends StatelessWidget {
       child: BlocBuilder<UserInfoDisplayCubit, UserInfoDisplayState>(
         builder: (context, state) {
           if (state is UserInfoLoading) {
-            return _loadingUserInfoWidget();
+            return _loadingUserInfoWidget(context);
           }
           if (state is UserInfoLoaded) {
-            return _loadedUserInfoWidget(state);
+            return _loadedUserInfoWidget(state, context);
           }
           return Container();
         },
@@ -30,24 +31,24 @@ class HomePageHeader extends StatelessWidget {
     );
   }
 
-  Row _loadedUserInfoWidget(UserInfoLoaded state) {
+  Row _loadedUserInfoWidget(UserInfoLoaded state, context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _profileImage(),
         _gender(state.userEntity),
-        _bag(),
+        _bag(context),
       ],
     );
   }
 
-  Row _loadingUserInfoWidget() {
+  Row _loadingUserInfoWidget(context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _profileImage(),
         _gender(null),
-        _bag(),
+        _bag(context),
       ],
     );
   }
@@ -94,17 +95,27 @@ class HomePageHeader extends StatelessWidget {
     );
   }
 
-  Widget _bag() {
-    return Container(
-      width: 40,
-      height: 40,
-      decoration: const BoxDecoration(
-        color: AppColors.primaryColor,
-        shape: BoxShape.circle,
-      ),
-      child: SvgPicture.asset(
-        AppVectors.bagVector,
-        fit: BoxFit.scaleDown,
+  Widget _bag(context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const CartPage(),
+          ),
+        );
+      },
+      child: Container(
+        width: 40,
+        height: 40,
+        decoration: const BoxDecoration(
+          color: AppColors.primaryColor,
+          shape: BoxShape.circle,
+        ),
+        child: SvgPicture.asset(
+          AppVectors.bagVector,
+          fit: BoxFit.scaleDown,
+        ),
       ),
     );
   }
