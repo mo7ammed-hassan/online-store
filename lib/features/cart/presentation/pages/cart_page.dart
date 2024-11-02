@@ -7,7 +7,9 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: BasicAppBar(hideBack: false,),
+      appBar: BasicAppBar(
+        hideBack: false,
+      ),
     );
   }
 }

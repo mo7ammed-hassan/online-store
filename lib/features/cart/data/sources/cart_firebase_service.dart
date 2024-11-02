@@ -7,6 +7,7 @@ import 'package:online_store/features/cart/data/models/add_to_cart_req_model.dar
 // respect dependance inverstion from solid princible
 abstract class OrderFirebaseService {
   Future<Either> addToCart(AddToCartReqModel addToCartReqModel);
+
 }
 
 class OrderFirebaseServiceImpl implements OrderFirebaseService {
