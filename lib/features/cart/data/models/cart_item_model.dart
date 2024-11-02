@@ -47,6 +47,7 @@ extension CartItemXModel on CartItemModel {
       productPrice: totalPrice,
       productColor: productColor,
       productSize: productSize,
+      productImage: productImageUrl,
     );
   }
 }

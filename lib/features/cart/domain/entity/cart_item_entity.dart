@@ -4,6 +4,7 @@ class CartItemEntity {
   final double productPrice;
   final String productSize;
   final String productColor;
+  final String productImage;
 
   CartItemEntity({
     required this.productId,
@@ -11,5 +12,6 @@ class CartItemEntity {
     required this.productPrice,
     required this.productSize,
     required this.productColor,
+    required this.productImage,
   });
 }
