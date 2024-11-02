@@ -19,10 +19,10 @@ import 'package:online_store/features/home/domain/use_case.dart/product/get_new_
 import 'package:online_store/features/home/domain/use_case.dart/product/get_products_by_category_id_use_case.dart';
 import 'package:online_store/features/home/domain/use_case.dart/product/get_products_by_title_use_case.dart';
 import 'package:online_store/features/home/domain/use_case.dart/product/get_top_selling_use_case.dart';
-import 'package:online_store/features/order/data/repository/order_repository_impl.dart';
-import 'package:online_store/features/order/data/sources/order_firebase_service.dart';
-import 'package:online_store/features/order/domain/repository/order_repository.dart';
-import 'package:online_store/features/order/domain/use_cases/add_to_cart_use_case.dart';
+import 'package:online_store/features/cart/data/repository/cart_repository_impl.dart';
+import 'package:online_store/features/cart/data/sources/cart_firebase_service.dart';
+import 'package:online_store/features/cart/domain/repository/cart_repository.dart';
+import 'package:online_store/features/cart/domain/use_cases/add_to_cart_use_case.dart';
 
 final getIt = GetIt.instance;
 
@@ -51,8 +51,8 @@ Future<void> initializeDependencies() async {
   getIt.registerSingleton<ProductRepository>(
     ProductRepositoryImpl(),
   );
-  getIt.registerSingleton<OrderRepository>(
-    OrderRepositoryImpl(),
+  getIt.registerSingleton<CartRepository>(
+    CartRepositoryImpl(),
   );
 
   // UseCases

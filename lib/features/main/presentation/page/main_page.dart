@@ -18,24 +18,20 @@ class MainPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => NavigationCubit(),
       child: Scaffold(
-        body: _appBody(),
+        body: BlocBuilder<NavigationCubit, int>(
+          builder: (context, state) {
+            return SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppPadding.horizontalPagePadding,
+                ),
+                child: _pages[state],
+              ),
+            );
+          },
+        ),
         bottomNavigationBar: _bottomNavigationApp(),
       ),
-    );
-  }
-
-  Widget _appBody() {
-    return BlocBuilder<NavigationCubit, int>(
-      builder: (context, state) {
-        return SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppPadding.horizontalPagePadding,
-            ),
-            child: _pages[state],
-          ),
-        );
-      },
     );
   }
 

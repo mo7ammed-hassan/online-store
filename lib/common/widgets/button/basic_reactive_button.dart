@@ -57,6 +57,7 @@ class BasicReactiveButton extends StatelessWidget {
         ),
       ),
       child: Container(
+        height: height ?? 50,
         alignment: Alignment.center,
         child: const CircularProgressIndicator(),
       ),
