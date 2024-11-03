@@ -8,12 +8,14 @@ class OrderRegistrationReqModel {
   final String createdDate;
   final int itemCount;
   final double totalPrice;
+  final String shippingAddress;
 
   OrderRegistrationReqModel({
     required this.cartItems,
     required this.createdDate,
     required this.itemCount,
     required this.totalPrice,
+    required this.shippingAddress,
   });
 
   Map<String, dynamic> toMap() {
@@ -24,6 +26,7 @@ class OrderRegistrationReqModel {
       'createdDate': createdDate,
       'itemCount': itemCount,
       'totalPrice': totalPrice,
+      'shippingAddress': shippingAddress,
     };
   }
 }
