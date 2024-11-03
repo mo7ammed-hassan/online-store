@@ -7,7 +7,8 @@ import 'package:online_store/core/configs/theme/app_text_style.dart';
 class CheckoutCard extends StatelessWidget {
   final String hintText;
   final VoidCallback onTap;
-  const CheckoutCard({super.key, required this.hintText, required this.onTap});
+  final TextEditingController? textFieldController;
+  const CheckoutCard({super.key, required this.hintText, required this.onTap, this.textFieldController});
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +37,7 @@ class CheckoutCard extends StatelessWidget {
                         AppTextStyle.textStyle16.copyWith(color: Colors.grey),
                   ),
                   TextField(
+                    controller: textFieldController,
                     scribbleEnabled: false,
                     style: AppTextStyle.textStyle18W500
                         .copyWith(overflow: TextOverflow.ellipsis),

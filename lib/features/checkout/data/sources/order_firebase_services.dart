@@ -13,15 +13,25 @@ class OrderFirebaseServiceImpl implements OrderFirebaseService {
   Future<Either> orderRegistration(OrderRegistrationReqModel order) async {
     try {
       var user = FirebaseAuth.instance.currentUser;
-      FirebaseFirestore.instance
+      await FirebaseFirestore.instance
           .collection(FirebaseConstants.userCollection)
           .doc(user!.uid)
           .collection(FirebaseConstants.orderCollection)
           .add(order.toMap());
 
+      // remove order from cart
+      for (var item in order.cartItems) {
+        await FirebaseFirestore.instance
+            .collection(FirebaseConstants.userCollection)
+            .doc(user.uid)
+            .collection(FirebaseConstants.cartCollection)
+            .doc(item.id)
+            .delete();
+      }
+
       return const Right("Order registered successfully");
     } catch (e) {
-      return Left(e);
+      return const Left('There was an error,please try again');
     }
   }
 }

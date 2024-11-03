@@ -7,6 +7,7 @@ class AppImages {
   static const String userVector = '${baseUrl}user_vector.jpg';
   static const String searchFilter = '${baseUrl}search_filter$format';
   static const String cartLogo = '${baseUrl}cart$format';
+  static const String checkoutLogo = '${baseUrl}checkout$format';
 
   // static String getImagePath(String imageName) {
   //   return '$baseUrl$imageName$format';

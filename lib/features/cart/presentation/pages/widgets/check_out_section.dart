@@ -19,7 +19,7 @@ class CheckOutSection extends StatelessWidget {
         BasicAppButton(
           title: 'CheckOut',
           onPressed: () {
-            context.push(const CheckoutPage());
+            context.push(CheckoutPage(cartItems: cartItems));
           },
         ),
       ],
