@@ -10,6 +10,10 @@ import 'package:online_store/features/auth/domain/use_case/signin_use_case.dart'
 import 'package:online_store/features/auth/domain/use_case/signup_use_case.dart';
 import 'package:online_store/features/cart/domain/use_cases/get_cart_products_use_case.dart';
 import 'package:online_store/features/cart/domain/use_cases/remove_item_from_cart_use_case.dart';
+import 'package:online_store/features/checkout/data/repositories/order_repository_impl.dart';
+import 'package:online_store/features/checkout/data/sources/order_firebase_services.dart';
+import 'package:online_store/features/checkout/domain/repositories/order_repository.dart';
+import 'package:online_store/features/checkout/domain/use_cases/order_regestration_use_case.dart';
 import 'package:online_store/features/home/data/repository/category_repository_impl.dart';
 import 'package:online_store/features/home/data/repository/product_repository_impl.dart';
 import 'package:online_store/features/home/data/source/category_firebase_services.dart';
@@ -42,6 +46,9 @@ Future<void> initializeDependencies() async {
   getIt.registerSingleton<CartFirebaseService>(
     CartFirebaseServiceImpl(),
   );
+  getIt.registerSingleton<OrderFirebaseService>(
+    OrderFirebaseServiceImpl(),
+  );
 
   // Repositories
   getIt.registerSingleton<AuthRepository>(
@@ -55,6 +62,9 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<CartRepository>(
     CartRepositoryImpl(),
+  );
+  getIt.registerSingleton<OrderRepository>(
+    OrderRepositoryImpl(),
   );
 
   // UseCases
@@ -99,5 +109,8 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<RemoveItemFromCartUseCase>(
     RemoveItemFromCartUseCase(),
+  );
+  getIt.registerSingleton<OrderRegestrationUseCase>(
+    OrderRegestrationUseCase(),
   );
 }

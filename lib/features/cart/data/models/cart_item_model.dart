@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'package:online_store/features/cart/domain/entity/cart_item_entity.dart';
 
 class CartItemModel {
@@ -39,9 +41,28 @@ class CartItemModel {
       id: map['id'] as String,
     );
   }
+
+ 
+
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'productId': productId,
+      'productTitle': productTitle,
+      'productQuantity': productQuantity,
+      'productColor': productColor,
+      'productSize': productSize,
+      'productPrice': productPrice,
+      'totalPrice': totalPrice,
+      'productImageUrl': productImageUrl,
+      'createdDate': createdDate,
+      'id': id,
+    };
+  }
+
+ 
 }
 // convert cartItem model to cartItem entity
-
 extension CartItemXModel on CartItemModel {
   CartItemEntity toEntity() {
     return CartItemEntity(
@@ -51,6 +72,24 @@ extension CartItemXModel on CartItemModel {
       productColor: productColor,
       productSize: productSize,
       productImage: productImageUrl,
+      productQuantity: productQuantity,
+      createdDate: createdDate,
+      totalPrice: totalPrice,
+      id: id,
+    );
+  }
+}
+
+// convert cartItemEntity  to cartItem model for set in db
+extension CartItemXEntity on CartItemEntity {
+  CartItemModel fromEntity() {
+    return CartItemModel(
+      productId: productId,
+      productTitle: productTitle,
+      productPrice: totalPrice,
+      productColor: productColor,
+      productSize: productSize,
+      productImageUrl: productImage,
       productQuantity: productQuantity,
       createdDate: createdDate,
       totalPrice: totalPrice,

@@ -6,4 +6,5 @@ class FirebaseConstants {
   static const String categoryCollection = 'Categories';
   static const String productCollection = 'Products';
   static const String cartCollection = 'Cart';
+  static const String orderCollection = 'Orders';
 }
