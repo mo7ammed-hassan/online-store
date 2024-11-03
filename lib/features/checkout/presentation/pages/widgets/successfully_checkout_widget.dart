@@ -12,54 +12,56 @@ class SuccessfullyCheckoutWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
-      body: Column(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(AppImages.checkoutLogo),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 3,
+              child: Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(AppImages.checkoutLogo),
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: const EdgeInsets.all(30),
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: const EdgeInsets.all(30),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    const Text(
+                      'Order Placed\n Successfully',
+                      style: AppTextStyle.textStyle32,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: AppPadding.defaultSpaceWidget),
+                    Text(
+                      'You will recieve an email confirmation',
+                      style:
+                          AppTextStyle.textStyle15.copyWith(color: Colors.grey),
+                      textAlign: TextAlign.center,
+                    ),
+                    const Spacer(flex: 3),
+                    BasicAppButton(
+                      title: 'See Order details',
+                      onPressed: () {},
+                    ),
+                    const Spacer(flex: 1),
+                  ],
                 ),
               ),
-              child: Column(
-                children: [
-                  const Text(
-                    'Order Placed\n Successfully',
-                    style: AppTextStyle.textStyle32,
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: AppPadding.defaultSpaceWidget),
-                  Text(
-                    'You will recieve an email confirmation',
-                    style:
-                        AppTextStyle.textStyle15.copyWith(color: Colors.grey),
-                    textAlign: TextAlign.center,
-                  ),
-                  const Spacer(flex: 3),
-                  BasicAppButton(
-                    title: 'See Order details',
-                    onPressed: () {},
-                  ),
-                  const Spacer(flex: 1),
-                ],
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
