@@ -10,6 +10,7 @@ class CartItemModel {
   final double totalPrice;
   final String productImageUrl;
   final String createdDate;
+  final String id;
 
   CartItemModel({
     required this.productId,
@@ -21,6 +22,7 @@ class CartItemModel {
     required this.totalPrice,
     required this.productImageUrl,
     required this.createdDate,
+    required this.id,
   });
 
   factory CartItemModel.fromMap(Map<String, dynamic> map) {
@@ -34,6 +36,7 @@ class CartItemModel {
       totalPrice: map['totalPrice'] as double,
       productImageUrl: map['productImageUrl'] as String,
       createdDate: map['createdDate'] as String,
+      id: map['id'] as String,
     );
   }
 }
@@ -48,6 +51,10 @@ extension CartItemXModel on CartItemModel {
       productColor: productColor,
       productSize: productSize,
       productImage: productImageUrl,
+      productQuantity: productQuantity,
+      createdDate: createdDate,
+      totalPrice: totalPrice,
+      id: id,
     );
   }
 }

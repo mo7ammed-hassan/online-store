@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/common/helper/images/image_display.dart';
 import 'package:online_store/common/widgets/product/quantity_buttom.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/features/cart/domain/entity/cart_item_entity.dart';
+import 'package:online_store/features/cart/presentation/pages/cubits/cart_product_display_cubit.dart';
 
 class CartItemCard extends StatelessWidget {
   const CartItemCard({super.key, required this.cartItem});
@@ -42,7 +44,7 @@ class CartItemCard extends StatelessWidget {
           const SizedBox(width: 12),
           // Product Details
           Expanded(
-            flex: 6,
+            flex: 7,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -57,7 +59,6 @@ class CartItemCard extends StatelessWidget {
                 Row(
                   children: [
                     FittedBox(
-                      fit: BoxFit.scaleDown,
                       child: Text.rich(
                         overflow: TextOverflow.ellipsis,
                         TextSpan(
@@ -106,7 +107,7 @@ class CartItemCard extends StatelessWidget {
               children: [
                 FittedBox(
                   child: Text(
-                    '\$${cartItem.productPrice}',
+                    '\$${(cartItem.productPrice)}',
                     style: AppTextStyle.textStyle18Bold,
                   ),
                 ),
@@ -118,14 +119,30 @@ class CartItemCard extends StatelessWidget {
                       padding: 0,
                       iconSize: 25,
                       icon: Icons.add,
-                      onPressed: () {},
+                      onPressed: () {
+                        context
+                            .read<CartProductDisplayCubit>()
+                            .addCartProducts(cartItem);
+                      },
                     ),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: 5),
+                    Flexible(
+                      fit: FlexFit.loose,
+                      child: Text(
+                        cartItem.productQuantity.toString(),
+                        style: AppTextStyle.textStyle14,
+                      ),
+                    ),
+                    const SizedBox(width: 5),
                     QuantityButtom(
                       padding: 0,
                       iconSize: 25,
                       icon: Icons.remove,
-                      onPressed: () {},
+                      onPressed: () {
+                        context
+                            .read<CartProductDisplayCubit>()
+                            .removeCartProducts(cartItem);
+                      },
                     ),
                   ],
                 ),

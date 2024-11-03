@@ -9,6 +9,7 @@ import 'package:online_store/features/auth/domain/use_case/send_password_reset_e
 import 'package:online_store/features/auth/domain/use_case/signin_use_case.dart';
 import 'package:online_store/features/auth/domain/use_case/signup_use_case.dart';
 import 'package:online_store/features/cart/domain/use_cases/get_cart_products_use_case.dart';
+import 'package:online_store/features/cart/domain/use_cases/remove_item_from_cart_use_case.dart';
 import 'package:online_store/features/home/data/repository/category_repository_impl.dart';
 import 'package:online_store/features/home/data/repository/product_repository_impl.dart';
 import 'package:online_store/features/home/data/source/category_firebase_services.dart';
@@ -95,5 +96,8 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<GetCartProductsUseCase>(
     GetCartProductsUseCase(),
+  );
+  getIt.registerSingleton<RemoveItemFromCartUseCase>(
+    RemoveItemFromCartUseCase(),
   );
 }

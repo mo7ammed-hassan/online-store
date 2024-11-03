@@ -24,10 +24,13 @@ class CartPageBody extends StatelessWidget {
         }
 
         if (state is CartProductLoaded) {
+          if (state.cartproducts.isEmpty) {
+            return const EmptyCartWidget();
+          }
           return CartProducts(cartProducts: state.cartproducts);
         }
 
-        return const EmptyCartWidget();
+        return Container();
       },
     );
   }
