@@ -13,6 +13,7 @@ import 'package:online_store/features/cart/domain/use_cases/remove_item_from_car
 import 'package:online_store/features/checkout/data/repositories/order_repository_impl.dart';
 import 'package:online_store/features/checkout/data/sources/order_firebase_services.dart';
 import 'package:online_store/features/checkout/domain/repositories/order_repository.dart';
+import 'package:online_store/features/checkout/domain/use_cases/get_orders_use_case.dart';
 import 'package:online_store/features/checkout/domain/use_cases/order_regestration_use_case.dart';
 import 'package:online_store/features/home/data/repository/category_repository_impl.dart';
 import 'package:online_store/features/home/data/repository/product_repository_impl.dart';
@@ -124,5 +125,8 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<GetFavoriteProductsUseCase>(
     GetFavoriteProductsUseCase(),
+  );
+  getIt.registerSingleton<GetOrdersUseCase>(
+    GetOrdersUseCase(),
   );
 }

@@ -4,6 +4,7 @@ import 'package:online_store/common/cubits/button/button_state.dart';
 import 'package:online_store/common/cubits/button/button_state_cubit.dart';
 import 'package:online_store/common/helper/app_navigator.dart';
 import 'package:online_store/common/helper/cart/cart_helper.dart';
+import 'package:online_store/common/helper/order/order_helper.dart';
 import 'package:online_store/common/widgets/button/basic_reactive_button.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
@@ -53,6 +54,8 @@ class CheckoutPageBody extends StatelessWidget {
                         itemCount: cartItems.length,
                         shippingAddress: adderssController.text,
                         totalPrice: CartHelper.calculateCartSubTotal(cartItems),
+                        orderNumber:
+                            OrderHelper.generateOrderNumber().toString(),
                       ),
                     );
               },

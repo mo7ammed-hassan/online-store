@@ -18,10 +18,7 @@ class FavoriteIconCuit extends Cubit<bool> {
         await getIt<AddOrRemoveFavoriteProductUseCase>().call(params: product);
 
     result.fold(
-      (error) {
-        // Handle error
-        print('Error: $error');
-      },
+      (error) {},
       (data) {
         emit(data);
       },

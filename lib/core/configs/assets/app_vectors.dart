@@ -12,6 +12,7 @@ class AppVectors {
   static const String arrowDownBlack = '${_basePath}arrow_down_black$_format';
   static const String arrowBack = '${_basePath}arrow_back$_format';
   static const String search = '${_basePath}search$_format';
+  static const String orderVector = '${_basePath}order$_format';
 
   static generateActVector(String vectore) {
     return _basePath + vectore + _format;

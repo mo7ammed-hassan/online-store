@@ -6,6 +6,7 @@ import 'package:online_store/features/checkout/data/models/order_registration_re
 
 abstract class OrderFirebaseService {
   Future<Either> orderRegistration(OrderRegistrationReqModel order);
+  Future<Either> getOrders();
 }
 
 class OrderFirebaseServiceImpl implements OrderFirebaseService {
@@ -30,6 +31,25 @@ class OrderFirebaseServiceImpl implements OrderFirebaseService {
       }
 
       return const Right("Order registered successfully");
+    } catch (e) {
+      return const Left('There was an error,please try again');
+    }
+  }
+
+  @override
+  Future<Either> getOrders() async {
+    try {
+      var user = FirebaseAuth.instance.currentUser;
+
+      var data = await FirebaseFirestore.instance
+          .collection(FirebaseConstants.userCollection)
+          .doc(user!.uid)
+          .collection(FirebaseConstants.orderCollection)
+          .get();
+
+      return Right(
+        data.docs.map((e) => e.data()),
+      );
     } catch (e) {
       return const Left('There was an error,please try again');
     }
