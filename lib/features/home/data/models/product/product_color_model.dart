@@ -31,3 +31,12 @@ extension ProductColorXModel on ProductColorModel {
     );
   }
 }
+
+extension ProductColorXEntity on ProductColorEntity {
+  ProductColorModel fromEntity() {
+    return ProductColorModel(
+      title: title,
+      rgb: rgb,
+    );
+  }
+}

@@ -21,6 +21,8 @@ import 'package:online_store/features/home/data/source/product_firebase_service.
 import 'package:online_store/features/home/domain/repository/category_repository.dart';
 import 'package:online_store/features/home/domain/repository/product_repository.dart';
 import 'package:online_store/features/home/domain/use_case.dart/category/get_categories_use_case.dart';
+import 'package:online_store/features/home/domain/use_case.dart/product/add_or_remove_favorite_product_use_case.dart';
+import 'package:online_store/features/home/domain/use_case.dart/product/get_favorite_products_use_case.dart';
 import 'package:online_store/features/home/domain/use_case.dart/product/get_new_in_use_case.dart';
 import 'package:online_store/features/home/domain/use_case.dart/product/get_products_by_category_id_use_case.dart';
 import 'package:online_store/features/home/domain/use_case.dart/product/get_products_by_title_use_case.dart';
@@ -29,6 +31,7 @@ import 'package:online_store/features/cart/data/repository/cart_repository_impl.
 import 'package:online_store/features/cart/data/sources/cart_firebase_service.dart';
 import 'package:online_store/features/cart/domain/repository/cart_repository.dart';
 import 'package:online_store/features/cart/domain/use_cases/add_to_cart_use_case.dart';
+import 'package:online_store/features/home/domain/use_case.dart/product/is_favorite_product_use_case.dart';
 
 final getIt = GetIt.instance;
 
@@ -112,5 +115,14 @@ Future<void> initializeDependencies() async {
   );
   getIt.registerSingleton<OrderRegestrationUseCase>(
     OrderRegestrationUseCase(),
+  );
+  getIt.registerSingleton<AddOrRemoveFavoriteProductUseCase>(
+    AddOrRemoveFavoriteProductUseCase(),
+  );
+  getIt.registerSingleton<IsFavoriteProductUseCase>(
+    IsFavoriteProductUseCase(),
+  );
+  getIt.registerSingleton<GetFavoriteProductsUseCase>(
+    GetFavoriteProductsUseCase(),
   );
 }
