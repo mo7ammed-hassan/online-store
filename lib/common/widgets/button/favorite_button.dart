@@ -12,13 +12,11 @@ class FavoriteButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print(1111);
         context.read<FavoriteIconCuit>().onTap(product);
       },
       child: Container(
-        height: 50,
-        width: 50,
-        margin: const EdgeInsets.only(right: 10),
+        padding: const EdgeInsets.all(5),
+        margin: const EdgeInsets.all(6),
         decoration: const BoxDecoration(
           color: AppColors.fillColorLightMode,
           shape: BoxShape.circle,
@@ -28,6 +26,7 @@ class FavoriteButton extends StatelessWidget {
             return Icon(
               state ? Icons.favorite : Icons.favorite_outline_outlined,
               color: state ? Colors.red : null,
+              size: 22,
             );
           },
         ),

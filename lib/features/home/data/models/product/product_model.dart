@@ -15,7 +15,7 @@ class ProductModel {
   final num gender;
   final String productId;
   final num salesNumber;
-  final List<String> sizes;
+  final List<String> size;
 
   ProductModel({
     required this.categoryId,
@@ -28,7 +28,7 @@ class ProductModel {
     required this.gender,
     required this.productId,
     required this.salesNumber,
-    required this.sizes,
+    required this.size,
   });
 
   Map<String, dynamic> toMap() {
@@ -43,7 +43,7 @@ class ProductModel {
       'gender': gender,
       'productId': productId,
       'salesNumber': salesNumber,
-      'sizes': sizes.map((e) => e.toString()).toList(),
+      'size': size.map((e) => e.toString()).toList(),
     };
   }
 
@@ -63,7 +63,7 @@ class ProductModel {
       gender: map['gender'] as num,
       productId: map['productId'] as String,
       salesNumber: map['salesNumber'] as num,
-      sizes: List<String>.from(
+      size: List<String>.from(
         map['size'].map((e) => e.toString()),
       ),
     );
@@ -80,7 +80,7 @@ extension ProductXModel on ProductModel {
       gender: gender,
       images: images,
       price: price,
-      sizes: sizes,
+      size: size,
       productId: productId,
       salesNumber: salesNumber,
       title: title,
@@ -98,7 +98,7 @@ extension ProductXEntity on ProductEntity {
       gender: gender,
       images: images,
       price: price,
-      sizes: sizes,
+      size: size,
       productId: productId,
       salesNumber: salesNumber,
       title: title,

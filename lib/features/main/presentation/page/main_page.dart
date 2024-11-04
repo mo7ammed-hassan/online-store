@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/common/helper/Bottom_nav_bar/generate_icon.dart';
+import 'package:online_store/features/favorite/presentation/pages/favorite_page.dart';
 import 'package:online_store/features/main/presentation/cubits/navigation_cubit.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/home/presentation/pages/home_page.dart';
@@ -11,7 +12,7 @@ class MainPage extends StatelessWidget {
     HomePage(),
     SizedBox(),
     SizedBox(),
-    SizedBox(),
+    FavoritePage(),
   ];
   @override
   Widget build(BuildContext context) {

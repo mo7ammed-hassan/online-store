@@ -47,7 +47,7 @@ class ProductSizes extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               shrinkWrap: true,
-              itemCount: product.sizes.length,
+              itemCount: product.size.length,
               itemBuilder: (context, index) {
                 return BlocBuilder<ProductSizeSelectionCubit, int>(
                   builder: (context, state) {
@@ -70,7 +70,7 @@ class ProductSizes extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              product.sizes[index],
+                              product.size[index],
                               style: AppTextStyle.textStyle18Bold.copyWith(
                                 color: state == index
                                     ? Colors.white

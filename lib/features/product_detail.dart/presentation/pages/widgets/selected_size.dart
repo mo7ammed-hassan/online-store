@@ -36,7 +36,7 @@ class SelectedSize extends StatelessWidget {
                 BlocBuilder<ProductSizeSelectionCubit, int>(
                   builder: (context, state) {
                     return Text(
-                      product.sizes[state],
+                      product.size[state],
                       style: AppTextStyle.textStyle18Bold,
                     );
                   },

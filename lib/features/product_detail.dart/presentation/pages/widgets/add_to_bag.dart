@@ -49,7 +49,7 @@ class AddToBag extends StatelessWidget {
                             .read<ProductColorsSelectionCubit>()
                             .selectedIndex]
                         .title,
-                    productSize: product.sizes[
+                    productSize: product.size[
                         context.read<ProductSizeSelectionCubit>().selectedSize],
                     productPrice: product.price.toDouble(),
                     totalPrice: ProductPriceHelper.provideCurrentPrice(
