@@ -100,7 +100,7 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
           .where('productId', isEqualTo: product.productId)
           .get();
 
-      if (products.docs.isEmpty) {
+      if (products.docs.isNotEmpty) {
         products.docs.first.reference.delete();
         return const Right(false);
       } else {
@@ -137,7 +137,6 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
   @override
   Future<bool> isFavoriteProduct({required String productId}) async {
     try {
-      
       var user = FirebaseAuth.instance.currentUser;
 
       var returnedData = await FirebaseFirestore.instance
