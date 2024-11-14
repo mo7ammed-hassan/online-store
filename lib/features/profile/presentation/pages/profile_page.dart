@@ -10,15 +10,22 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        children: [
-          const Spacer(flex: 5),
-          const ProfileSection(),
-          const SizedBox(height: AppPadding.defaultSpaceWidget),
-          const OptionsSection(),
-          const SizedBox(height: AppPadding.defaultSpaceWidget / 2),
-          _signOut(),
-          const Spacer(flex: 2),
+      child: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                const Spacer(flex: 5),
+                const ProfileSection(),
+                const SizedBox(height: AppPadding.defaultSpaceWidget),
+                const OptionsSection(),
+                const SizedBox(height: AppPadding.defaultSpaceWidget / 2),
+                _signOut(),
+                const Spacer(flex: 2),
+              ],
+            ),
+          ),
         ],
       ),
     );
