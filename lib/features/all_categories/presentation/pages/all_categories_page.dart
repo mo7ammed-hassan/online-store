@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:online_store/common/helper/app_navigator.dart';
 import 'package:online_store/common/widgets/appbar/basic_app_bar.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
@@ -12,8 +13,11 @@ class AllCategoriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(
+      appBar: BasicAppBar(
         hideBack: false,
+        arrowBacOnTap: () {
+          context.pop();
+        },
       ),
       body: BlocProvider(
         create: (context) => CategoriesDisplayCubit()..dispalyCategories(),

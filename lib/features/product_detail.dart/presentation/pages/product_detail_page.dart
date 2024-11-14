@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/common/cubits/button/button_state_cubit.dart';
+import 'package:online_store/common/helper/app_navigator.dart';
 import 'package:online_store/common/widgets/appbar/basic_app_bar.dart';
 import 'package:online_store/common/widgets/button/favorite_button.dart';
 import 'package:online_store/features/home/domain/entity/product/product_entity.dart';
@@ -48,8 +49,11 @@ class ProductDetailPage extends StatelessWidget {
     return BasicAppBar(
       hideBack: false,
       action: FavoriteButton(
-       product: product,
+        product: product,
       ),
+      arrowBacOnTap: () {
+        context.pop();
+      },
     );
   }
 }

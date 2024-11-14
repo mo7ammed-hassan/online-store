@@ -27,7 +27,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(),
+      appBar:  BasicAppBar(arrowBacOnTap: () { context.pop(); },),
       body: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: AppPadding.verticalPagePadding,

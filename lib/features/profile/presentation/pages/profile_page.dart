@@ -15,24 +15,26 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetUserCuit()..getUser(),
-      child: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Column(
-                children: [
-                  const Spacer(flex: 5),
-                  const ProfileSection(),
-                  const SizedBox(height: AppPadding.defaultSpaceWidget),
-                  const OptionsSection(),
-                  const SizedBox(height: AppPadding.defaultSpaceWidget / 2),
-                  _signOut(),
-                  const Spacer(flex: 2),
-                ],
+      child: Scaffold(
+        body: SafeArea(
+          child: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  children: [
+                    const Spacer(flex: 3),
+                    const ProfileSection(),
+                    const SizedBox(height: AppPadding.defaultSpaceWidget),
+                    const OptionsSection(),
+                    const SizedBox(height: AppPadding.defaultSpaceWidget / 2),
+                    _signOut(),
+                    const Spacer(flex: 2),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

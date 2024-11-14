@@ -23,7 +23,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(),
+      appBar:  BasicAppBar(arrowBacOnTap: () { context.pop(); },),
       body: BlocProvider(
         create: (context) => ButtonStateCubit(),
         child: Padding(

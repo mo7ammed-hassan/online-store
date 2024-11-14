@@ -22,7 +22,12 @@ class _SigninPageState extends State<SigninPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(hideBack: true),
+      appBar: BasicAppBar(
+        hideBack: true,
+        arrowBacOnTap: () {
+          context.pop();
+        },
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
           vertical: AppPadding.verticalPagePadding,

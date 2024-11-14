@@ -25,7 +25,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(hideBack: true),
+      appBar:  BasicAppBar(hideBack: true, arrowBacOnTap: () { context.pop(); },),
       body: MultiBlocProvider(
         providers: [
           BlocProvider(

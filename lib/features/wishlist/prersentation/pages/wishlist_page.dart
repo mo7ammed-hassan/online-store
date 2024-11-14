@@ -7,6 +7,8 @@ import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/favorite/presentation/pages/favorite_page.dart';
+import 'package:online_store/features/main/presentation/page/main_page.dart';
+// import 'package:online_store/features/profile/presentation/pages/profile_page.dart';
 
 class WishlistPage extends StatelessWidget {
   const WishlistPage({super.key});
@@ -14,8 +16,16 @@ class WishlistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const BasicAppBar(
-        title: Text(
+      appBar: BasicAppBar(
+        arrowBacOnTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const MainPage(),
+            ),
+          );
+        },
+        title: const Text(
           'Wishlist',
           style: AppTextStyle.textStyle22Bold,
         ),

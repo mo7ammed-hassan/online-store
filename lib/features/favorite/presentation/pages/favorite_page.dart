@@ -6,6 +6,7 @@ import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/favorite/presentation/cubits/get_favorites_product_cubit.dart';
 import 'package:online_store/features/favorite/presentation/cubits/get_favorites_products_state.dart';
+import 'package:online_store/features/wishlist/prersentation/pages/wishlist_page.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({super.key});
@@ -16,6 +17,14 @@ class FavoritePage extends StatelessWidget {
       create: (context) => GetFavoritesProductCubit()..getFavoriteProducts(),
       child: Scaffold(
         appBar: BasicAppBar(
+          arrowBacOnTap: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const WishlistPage(),
+              ),
+            );
+          },
           hideBack: false,
           title:
               BlocBuilder<GetFavoritesProductCubit, GetFavoritesProductsState>(

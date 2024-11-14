@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:online_store/common/helper/app_navigator.dart';
 import 'package:online_store/core/configs/assets/app_vectors.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 
@@ -9,6 +8,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
   final Widget? action;
   final bool hideBack;
+  final VoidCallback arrowBacOnTap;
 
   const BasicAppBar({
     super.key,
@@ -16,6 +16,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.action,
     this.hideBack = false,
+    required this.arrowBacOnTap,
   });
 
   @override
@@ -40,9 +41,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ), // Adds fixed space before the leading icon
                 Flexible(
                   child: GestureDetector(
-                    onTap: () {
-                      context.pop();
-                    },
+                    onTap: arrowBacOnTap,
                     child: Container(
                       height: 50,
                       width: 50,
