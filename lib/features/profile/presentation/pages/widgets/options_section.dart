@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_store/common/helper/app_navigator.dart';
-import 'package:online_store/features/favorite/presentation/pages/favorite_page.dart';
 import 'package:online_store/features/profile/presentation/pages/widgets/option_card.dart';
+import 'package:online_store/features/wishlist/prersentation/pages/wishlist_page.dart';
 
 class OptionsSection extends StatelessWidget {
   const OptionsSection({super.key});
@@ -37,7 +37,7 @@ class OptionsSection extends StatelessWidget {
         context.push(const SizedBox());
         break;
       case 'Wishlist':
-        context.push(const FavoritePage());
+        context.push(const WishlistPage());
         break;
     }
   }
