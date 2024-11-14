@@ -44,20 +44,9 @@ class AuthRepositoryImpl extends AuthRepository {
       );
     });
   }
+
+  @override
+  Future<Either> signOut() async {
+    return await getIt.get<AuthFirebaseService>().signOut();
+  }
 }
-
-/*
-
-
-
-
-
-
- if (data is Map<String, dynamic>) {
-        return Right(CurrentUserModel.fromJson(data).toEntity());
-      } else {
-        return const Left('Invalid data format');
-      }
-
-
- */

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
+import 'package:online_store/features/auth/domain/entities/current_user_entity.dart';
 
 class UserInfoCard extends StatelessWidget {
-  const UserInfoCard({super.key});
+  final CurrentUserEntity user;
+  const UserInfoCard({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -16,28 +18,30 @@ class UserInfoCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Gilbert Jones',
+          Text(
+            '${user.firstName} ${user.lastName}',
             style: AppTextStyle.textStyle18ExtraBold,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'gilbert.jones@example.com',
-                style: AppTextStyle.textStyle16Medium.copyWith(color: Colors.grey),
+                user.email,
+                style:
+                    AppTextStyle.textStyle16Medium.copyWith(color: Colors.grey),
               ),
               TextButton(
                 onPressed: () {},
                 child: Text(
                   'Edit',
-                  style: AppTextStyle.textStyle18Bold.copyWith(color: Colors.blue),
+                  style:
+                      AppTextStyle.textStyle18Bold.copyWith(color: Colors.blue),
                 ),
               ),
             ],
           ),
           Text(
-            '121-224-7890',
+            user.gender == 1 ? 'Male' : 'Female',
             style: AppTextStyle.textStyle16.copyWith(color: Colors.grey),
           ),
         ],

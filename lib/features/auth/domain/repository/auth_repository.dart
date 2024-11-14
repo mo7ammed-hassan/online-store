@@ -5,6 +5,7 @@ import 'package:online_store/features/auth/data/models/user_signin_req_model.dar
 abstract class AuthRepository {
   Future<Either> signup(UserCreationReqModel userCreation);
   Future<Either> signin(UserSigninReqModel userSignin);
+  Future<Either> signOut();
   Future<Either> getAges();
   Future<Either> sendPasswordResetEmail(String email);
   Future<bool> isLoggedIn();

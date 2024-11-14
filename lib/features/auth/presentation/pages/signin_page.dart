@@ -23,7 +23,7 @@ class _SigninPageState extends State<SigninPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const BasicAppBar(hideBack: true),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
           vertical: AppPadding.verticalPagePadding,
           horizontal: AppPadding.horizontalPagePadding,
