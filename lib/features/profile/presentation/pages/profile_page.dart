@@ -17,23 +17,28 @@ class ProfilePage extends StatelessWidget {
       create: (context) => GetUserCuit()..getUser(),
       child: Scaffold(
         body: SafeArea(
-          child: CustomScrollView(
-            slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Column(
-                  children: [
-                    const Spacer(flex: 3),
-                    const ProfileSection(),
-                    const SizedBox(height: AppPadding.defaultSpaceWidget),
-                    const OptionsSection(),
-                    const SizedBox(height: AppPadding.defaultSpaceWidget / 2),
-                    _signOut(),
-                    const Spacer(flex: 2),
-                  ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppPadding.horizontalPagePadding,
+            ),
+            child: CustomScrollView(
+              slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Column(
+                    children: [
+                      const Spacer(flex: 3),
+                      const ProfileSection(),
+                      const SizedBox(height: AppPadding.defaultSpaceWidget),
+                      const OptionsSection(),
+                      const SizedBox(height: AppPadding.defaultSpaceWidget / 2),
+                      _signOut(),
+                      const Spacer(flex: 2),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

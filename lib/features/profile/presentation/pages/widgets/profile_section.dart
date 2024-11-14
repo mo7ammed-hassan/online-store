@@ -14,7 +14,10 @@ class ProfileSection extends StatelessWidget {
     return BlocBuilder<GetUserCuit, GetUserState>(
       builder: (context, state) {
         if (state is GetUserLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return Container(
+            alignment: Alignment.center,
+            child: const CircularProgressIndicator(),
+          );
         }
 
         if (state is GetUserLoaded) {
