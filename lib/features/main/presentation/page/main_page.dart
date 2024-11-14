@@ -4,12 +4,12 @@ import 'package:online_store/common/helper/Bottom_nav_bar/generate_icon.dart';
 import 'package:online_store/features/favorite/presentation/pages/favorite_page.dart';
 import 'package:online_store/features/main/presentation/cubits/navigation_cubit.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
-import 'package:online_store/features/home/presentation/pages/home_page.dart';
+import 'package:online_store/features/profile/presentation/pages/profile_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
   static const List<Widget> _pages = <Widget>[
-    HomePage(),
+    ProfilePage(),
     SizedBox(),
     SizedBox(),
     FavoritePage(),
@@ -18,20 +18,20 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => NavigationCubit(),
-      child: Scaffold(
-        body: BlocBuilder<NavigationCubit, int>(
-          builder: (context, state) {
-            return SafeArea(
+      child: BlocBuilder<NavigationCubit, int>(
+        builder: (context, state) {
+          return Scaffold(
+            body: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: AppPadding.horizontalPagePadding,
                 ),
                 child: _pages[state],
               ),
-            );
-          },
-        ),
-        bottomNavigationBar: _bottomNavigationApp(),
+            ),
+            bottomNavigationBar: _bottomNavigationApp(),
+          );
+        },
       ),
     );
   }
