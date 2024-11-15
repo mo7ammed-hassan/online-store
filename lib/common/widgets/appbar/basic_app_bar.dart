@@ -26,7 +26,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       automaticallyImplyLeading: false,
       centerTitle: true,
-      titleSpacing: 0,
+      titleSpacing: 8,
       title: title ?? const Text(''),
       scrolledUnderElevation: 0,
       actions: [
