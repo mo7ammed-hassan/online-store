@@ -21,7 +21,7 @@ class OrderPage extends StatelessWidget {
             'Orders',
             style: AppTextStyle.textStyle22Bold,
           ),
-          arrowBacOnTap: () {
+          arrowBackOnTap: () {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(

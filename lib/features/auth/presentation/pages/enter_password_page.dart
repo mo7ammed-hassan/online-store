@@ -28,7 +28,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BasicAppBar(
-        arrowBacOnTap: () {
+        arrowBackOnTap: () {
           context.pop();
         },
       ),

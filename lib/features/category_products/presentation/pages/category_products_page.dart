@@ -19,9 +19,12 @@ class CategoryProductsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  BasicAppBar(hideBack: false,arrowBacOnTap: () {
-        context.pop();
-      },),
+      appBar: BasicAppBar(
+        hideBack: false,
+        arrowBackOnTap: () {
+          context.pop();
+        },
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: AppPadding.horizontalPagePadding,

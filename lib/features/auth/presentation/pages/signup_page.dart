@@ -28,7 +28,11 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  BasicAppBar(arrowBacOnTap: () { context.pop(); },),
+      appBar: BasicAppBar(
+        arrowBackOnTap: () {
+          context.pop();
+        },
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
           vertical: AppPadding.verticalPagePadding,

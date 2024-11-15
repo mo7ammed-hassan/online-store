@@ -20,7 +20,7 @@ class SearchPage extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: BasicAppBar(
-          arrowBacOnTap: () {
+          arrowBackOnTap: () {
             context.pop();
           },
           hideBack: false,

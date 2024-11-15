@@ -24,7 +24,7 @@ class _SigninPageState extends State<SigninPage> {
     return Scaffold(
       appBar: BasicAppBar(
         hideBack: true,
-        arrowBacOnTap: () {
+        arrowBackOnTap: () {
           context.pop();
         },
       ),

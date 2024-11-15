@@ -19,7 +19,7 @@ class CheckoutPage extends StatelessWidget {
         appBar: BasicAppBar(
           hideBack: false,
           title: const Text('Checkout', style: AppTextStyle.textStyle24Bold),
-          arrowBacOnTap: () {
+          arrowBackOnTap: () {
             context.pop();
           },
         ),

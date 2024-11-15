@@ -15,7 +15,7 @@ class AllCategoriesPage extends StatelessWidget {
     return Scaffold(
       appBar: BasicAppBar(
         hideBack: false,
-        arrowBacOnTap: () {
+        arrowBackOnTap: () {
           context.pop();
         },
       ),

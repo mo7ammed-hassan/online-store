@@ -8,7 +8,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
   final Widget? action;
   final bool hideBack;
-  final VoidCallback arrowBacOnTap;
+  final VoidCallback? arrowBackOnTap;
 
   const BasicAppBar({
     super.key,
@@ -16,7 +16,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.action,
     this.hideBack = false,
-    required this.arrowBacOnTap,
+    this.arrowBackOnTap,
   });
 
   @override
@@ -26,23 +26,32 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       automaticallyImplyLeading: false,
       centerTitle: true,
-      titleSpacing: 12,
+      titleSpacing: 0,
       title: title ?? const Text(''),
       scrolledUnderElevation: 0,
       actions: [
-        action ?? Container(),
+        action ?? const SizedBox.shrink(),
       ],
       leading: hideBack
           ? null
-          : GestureDetector(
-              onTap: arrowBacOnTap,
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: AppColors.fillColorLightMode,
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(
-                  Icons.arrow_back_ios_new_outlined,
+          : Padding(
+              padding: const EdgeInsets.only(left: 16.0),
+              child: GestureDetector(
+                onTap: arrowBackOnTap,
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: const BoxDecoration(
+                    color: AppColors.fillColorLightMode,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Center(
+                    child: SvgPicture.asset(
+                      AppVectors.arrowBack,
+                      width: 16,
+                      height: 16,
+                    ),
+                  ),
                 ),
               ),
             ),

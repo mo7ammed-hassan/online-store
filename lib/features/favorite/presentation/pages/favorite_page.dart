@@ -17,7 +17,7 @@ class FavoritePage extends StatelessWidget {
       create: (context) => GetFavoritesProductCubit()..getFavoriteProducts(),
       child: Scaffold(
         appBar: BasicAppBar(
-          arrowBacOnTap: () {
+          arrowBackOnTap: () {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(

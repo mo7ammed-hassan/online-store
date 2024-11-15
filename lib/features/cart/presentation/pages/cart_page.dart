@@ -16,7 +16,7 @@ class CartPage extends StatelessWidget {
       create: (context) => CartProductDisplayCubit()..displayCartProducts(),
       child: Scaffold(
         appBar: BasicAppBar(
-          arrowBacOnTap: () {
+          arrowBackOnTap: () {
             context.pop();
           },
           hideBack: false,

@@ -51,7 +51,7 @@ class ProductDetailPage extends StatelessWidget {
       action: FavoriteButton(
         product: product,
       ),
-      arrowBacOnTap: () {
+      arrowBackOnTap: () {
         context.pop();
       },
     );

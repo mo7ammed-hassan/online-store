@@ -22,7 +22,6 @@ class ProductFirebaseServiceImpl extends ProductFirebaseService {
       var products = await FirebaseFirestore.instance
           .collection(FirebaseConstants.productCollection)
           .where('salesNumber', isGreaterThan: 20)
-          .limit(3)
           .get();
 
       return Right(
