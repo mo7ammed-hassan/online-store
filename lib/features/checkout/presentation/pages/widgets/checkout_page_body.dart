@@ -61,7 +61,7 @@ class CheckoutPageBody extends StatelessWidget {
                         orderStatus: [
                           OrderStatusEntity(
                             title: 'Delivered',
-                            done: false,
+                            done: true,
                             createdDate: Timestamp.now(),
                           ),
                           OrderStatusEntity(

@@ -33,7 +33,7 @@ class OrderDetailsPage extends StatelessWidget {
             const SizedBox(height: AppPadding.defaultSpaceWidget),
             _buildSectionHeader('Shipping Details'),
             const SizedBox(height: AppPadding.defaultSpaceWidget / 2),
-            const ShippingDetailsCard(),
+             ShippingDetailsCard(order: order,),
             // shipping details widget.
           ],
         ),
