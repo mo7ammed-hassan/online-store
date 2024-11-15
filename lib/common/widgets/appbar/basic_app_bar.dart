@@ -39,23 +39,19 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                 const SizedBox(
                   width: 10.0,
                 ), // Adds fixed space before the leading icon
-                Flexible(
-                  child: GestureDetector(
-                    onTap: arrowBacOnTap,
-                    child: Container(
-                      height: 50,
-                      width: 50,
-                      decoration: const BoxDecoration(
-                        color: AppColors.fillColorLightMode,
-                        shape: BoxShape.circle,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: SvgPicture.asset(
-                          AppVectors.arrowBack,
-                          height: 20, // Set desired height
-                          width: 20,
-                        ),
+                GestureDetector(
+                  onTap: arrowBacOnTap,
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: const BoxDecoration(
+                      color: AppColors.fillColorLightMode,
+                      shape: BoxShape.circle,
+                    ),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: SvgPicture.asset(
+                        AppVectors.arrowBack,
                       ),
                     ),
                   ),

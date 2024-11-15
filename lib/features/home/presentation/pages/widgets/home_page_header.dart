@@ -55,8 +55,6 @@ class HomePageHeader extends StatelessWidget {
 
   Widget _profileImage() {
     return Container(
-      width: 40,
-      height: 40,
       decoration: const BoxDecoration(
         color: AppColors.fillColorLightMode,
         shape: BoxShape.circle,
