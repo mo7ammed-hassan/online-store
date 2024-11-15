@@ -1,6 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
 import 'package:online_store/features/cart/data/models/cart_item_model.dart';
+import 'package:online_store/features/order/data/models/order_status_model.dart';
 import 'package:online_store/features/order/domain/entity/order_entity.dart';
 
 class OrderModel {
@@ -10,6 +9,7 @@ class OrderModel {
   final double totalPrice;
   final String shippingAddress;
   final String orderNumber;
+  final List<OrderStatusModel> orderStatus;
 
   OrderModel({
     required this.cartItems,
@@ -18,6 +18,7 @@ class OrderModel {
     required this.totalPrice,
     required this.shippingAddress,
     required this.orderNumber,
+    required this.orderStatus,
   });
 
   factory OrderModel.fromMap(Map<String, dynamic> map) {
@@ -32,6 +33,11 @@ class OrderModel {
       totalPrice: map['totalPrice'] as double,
       shippingAddress: map['shippingAddress'] as String,
       orderNumber: map['orderNumber'] as String,
+      orderStatus: List<OrderStatusModel>.from(
+        (map['orderStatus']).map(
+          (e) => OrderStatusModel.fromMap(e as Map<String, dynamic>),
+        ),
+      ),
     );
   }
 }
@@ -45,6 +51,7 @@ extension OrderXModel on OrderModel {
       totalPrice: totalPrice,
       shippingAddress: shippingAddress,
       orderNumber: orderNumber,
+      orderStatus: orderStatus.map((item) => item.toEntity()).toList(),
     );
   }
 }

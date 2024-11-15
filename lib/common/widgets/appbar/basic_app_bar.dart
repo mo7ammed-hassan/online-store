@@ -34,29 +34,17 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
       ],
       leading: hideBack
           ? null
-          : Row(
-              children: [
-                const SizedBox(
-                  width: 10.0,
-                ), // Adds fixed space before the leading icon
-                GestureDetector(
-                  onTap: arrowBacOnTap,
-                  child: Container(
-                    height: 40,
-                    width: 40,
-                    decoration: const BoxDecoration(
-                      color: AppColors.fillColorLightMode,
-                      shape: BoxShape.circle,
-                    ),
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: SvgPicture.asset(
-                        AppVectors.arrowBack,
-                      ),
-                    ),
-                  ),
+          : GestureDetector(
+              onTap: arrowBacOnTap,
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: AppColors.fillColorLightMode,
+                  shape: BoxShape.circle,
                 ),
-              ],
+                child: const Icon(
+                  Icons.arrow_back_ios_new_outlined,
+                ),
+              ),
             ),
     );
   }

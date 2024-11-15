@@ -20,7 +20,7 @@ class OrdersList extends StatelessWidget {
           clipBehavior: Clip.none,
           child: Row(
             children: List.generate(
-              6,
+              4,
               (index) {
                 return const FilterOrderCard();
               },

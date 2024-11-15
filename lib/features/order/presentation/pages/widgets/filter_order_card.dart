@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_store/core/configs/theme/app_colors.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 
 class FilterOrderCard extends StatelessWidget {
@@ -15,8 +16,8 @@ class FilterOrderCard extends StatelessWidget {
       ),
       margin: const EdgeInsets.only(right: 12),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: Colors.lightBlueAccent,
+        borderRadius: BorderRadius.circular(12),
+        color: AppColors.fillColorLightMode,
       ),
       child: const Text(
         'Processing',
