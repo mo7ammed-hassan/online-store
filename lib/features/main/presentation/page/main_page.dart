@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/common/helper/Bottom_nav_bar/generate_icon.dart';
 import 'package:online_store/features/home/presentation/pages/home_page.dart';
 import 'package:online_store/features/main/presentation/cubits/navigation_cubit.dart';
-import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/order/presentation/pages/order_page.dart';
 import 'package:online_store/features/profile/presentation/pages/profile_page.dart';
 

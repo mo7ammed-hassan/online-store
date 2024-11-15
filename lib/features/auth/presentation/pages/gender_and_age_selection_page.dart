@@ -14,7 +14,7 @@ import 'package:online_store/features/auth/presentation/cubits/age_selection_cub
 import 'package:online_store/features/auth/presentation/cubits/gender_selection_cubit.dart';
 import 'package:online_store/features/auth/presentation/cubits/get_ages_cubit.dart';
 import 'package:online_store/features/auth/presentation/pages/widgets/select_gender_section.dart';
-import 'package:online_store/features/home/presentation/pages/home_page.dart';
+import 'package:online_store/features/main/presentation/page/main_page.dart';
 
 import 'widgets/select_age_section.dart';
 
@@ -44,7 +44,7 @@ class GenderAndAgeSelectionPage extends StatelessWidget {
         child: BlocListener<ButtonStateCubit, ButtonState>(
           listener: (context, state) {
             if (state is ButtonSuccessState) {
-              context.pushAndremove(const HomePage());
+              context.pushAndremove(const MainPage());
             }
 
             if (state is ButtonFailureState) {

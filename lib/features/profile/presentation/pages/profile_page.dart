@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/core/configs/theme/app_text_style.dart';
 import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/auth/domain/use_case/sign_out_use_case.dart';
+import 'package:online_store/features/auth/presentation/pages/signin_page.dart';
 import 'package:online_store/features/profile/presentation/cubit/get_user_cuit.dart';
 import 'package:online_store/features/profile/presentation/pages/widgets/options_section.dart';
 import 'package:online_store/features/profile/presentation/pages/widgets/profile_section.dart';
@@ -32,7 +33,7 @@ class ProfilePage extends StatelessWidget {
                       const SizedBox(height: AppPadding.defaultSpaceWidget),
                       const OptionsSection(),
                       const SizedBox(height: AppPadding.defaultSpaceWidget / 2),
-                      _signOut(),
+                      _signOut(context),
                       const Spacer(flex: 2),
                     ],
                   ),
@@ -45,7 +46,7 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _signOut() {
+  Widget _signOut(context) {
     return TextButton(
       child: Text(
         'Sign Out',
@@ -53,6 +54,13 @@ class ProfilePage extends StatelessWidget {
       ),
       onPressed: () async {
         await getIt<SignOutUseCase>().call();
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SigninPage(),
+          ),
+          (route) => false,
+        );
       },
     );
   }

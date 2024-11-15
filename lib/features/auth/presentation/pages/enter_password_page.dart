@@ -11,7 +11,7 @@ import 'package:online_store/core/utils/constants/app_padding.dart';
 import 'package:online_store/features/auth/data/models/user_signin_req_model.dart';
 import 'package:online_store/features/auth/domain/use_case/signin_use_case.dart';
 import 'package:online_store/features/auth/presentation/pages/forgot_password_page.dart';
-import 'package:online_store/features/home/presentation/pages/home_page.dart';
+import 'package:online_store/features/main/presentation/page/main_page.dart';
 
 class EnterPasswordPage extends StatefulWidget {
   final UserSigninReqModel signinReqModel;
@@ -27,7 +27,11 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  BasicAppBar(arrowBacOnTap: () { context.pop(); },),
+      appBar: BasicAppBar(
+        arrowBacOnTap: () {
+          context.pop();
+        },
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: AppPadding.verticalPagePadding,
@@ -38,7 +42,7 @@ class _EnterPasswordPageState extends State<EnterPasswordPage> {
           child: BlocListener<ButtonStateCubit, ButtonState>(
             listener: (context, state) {
               if (state is ButtonSuccessState) {
-                context.pushAndremove(const HomePage());
+                context.pushAndremove(const MainPage());
               }
 
               if (state is ButtonFailureState) {
