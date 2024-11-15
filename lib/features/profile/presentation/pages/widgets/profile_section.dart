@@ -60,7 +60,7 @@ class ProfileSection extends StatelessWidget {
         shape: BoxShape.circle,
         image: DecorationImage(
           fit: BoxFit.contain,
-          image: AssetImage(AppImages.userVector),
+          image: AssetImage(AppImages.userImage),
         ),
       ),
     );

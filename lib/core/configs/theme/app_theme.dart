@@ -32,7 +32,27 @@ class AppTheme {
         ),
       ),
     ),
-   
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: AppColors.fillColorLightMode,
+      elevation: 0,
+      type: BottomNavigationBarType.shifting,
+      landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      enableFeedback: false,
+    ),
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: AppColors.fillColorDarkMode,
+      actionTextColor: AppColors.hintTextColorLightMode,
+    ),
+    hintColor: AppColors.primaryTextColorLightMode,
+    primaryColorLight: AppColors.hintTextColorLightMode,
+    primaryColorDark: AppColors.hintTextColorDarkMode,
+    primaryIconTheme:
+        const IconThemeData(color: AppColors.hintTextColorLightMode),
+    primaryTextTheme: const TextTheme(
+      titleLarge: TextStyle(color: AppColors.hintTextColorLightMode),
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -64,6 +84,27 @@ class AppTheme {
           borderRadius: BorderRadius.circular(100),
         ),
       ),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: AppColors.fillColorDarkMode,
+      elevation: 0,
+      type: BottomNavigationBarType.shifting,
+      landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      enableFeedback: false,
+    ),
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: AppColors.fillColorLightMode,
+      actionTextColor: AppColors.hintTextColorDarkMode,
+    ),
+    hintColor: AppColors.primaryTextColorDarkMode,
+    primaryColorLight: AppColors.hintTextColorLightMode,
+    primaryColorDark: AppColors.hintTextColorDarkMode,
+    primaryIconTheme:
+        const IconThemeData(color: AppColors.hintTextColorDarkMode),
+    primaryTextTheme: const TextTheme(
+      titleLarge: TextStyle(color: AppColors.hintTextColorDarkMode),
     ),
   );
 

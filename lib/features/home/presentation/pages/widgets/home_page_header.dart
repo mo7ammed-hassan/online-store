@@ -55,12 +55,13 @@ class HomePageHeader extends StatelessWidget {
 
   Widget _profileImage() {
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.fillColorLightMode,
-        shape: BoxShape.circle,
+      padding: const EdgeInsets.all(5),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Image.asset(
-        AppImages.userVector,
+        AppImages.userImage,
       ),
     );
   }

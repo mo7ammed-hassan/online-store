@@ -37,13 +37,6 @@ class MainPage extends StatelessWidget {
         return SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.08,
           child: BottomNavigationBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            type: BottomNavigationBarType.shifting,
-            landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            enableFeedback: false,
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: generateBtnBarIcon('home', 0, state),
