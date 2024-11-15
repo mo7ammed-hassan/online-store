@@ -42,8 +42,6 @@ class CartItemModel {
     );
   }
 
- 
-
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -60,7 +58,6 @@ class CartItemModel {
     };
   }
 
- 
 }
 // convert cartItem model to cartItem entity
 extension CartItemXModel on CartItemModel {

@@ -2,6 +2,8 @@
 
 import 'package:online_store/features/cart/data/models/cart_item_model.dart';
 import 'package:online_store/features/cart/domain/entity/cart_item_entity.dart';
+import 'package:online_store/features/order/data/models/order_status_model.dart';
+import 'package:online_store/features/order/domain/entity/order_status_entity.dart';
 
 class OrderRegistrationReqModel {
   final List<CartItemEntity> cartItems;
@@ -10,6 +12,7 @@ class OrderRegistrationReqModel {
   final double totalPrice;
   final String shippingAddress;
   final String orderNumber;
+  final List<OrderStatusEntity> orderStatus;
 
   OrderRegistrationReqModel({
     required this.cartItems,
@@ -18,6 +21,7 @@ class OrderRegistrationReqModel {
     required this.totalPrice,
     required this.shippingAddress,
     required this.orderNumber,
+    required this.orderStatus,
   });
 
   Map<String, dynamic> toMap() {
@@ -30,6 +34,9 @@ class OrderRegistrationReqModel {
       'totalPrice': totalPrice,
       'shippingAddress': shippingAddress,
       'orderNumber': orderNumber,
+      'orderStatus': List.from(
+        orderStatus.map((e) => e.fromEntity().toMap()),
+      ).toList(),
     };
   }
 }

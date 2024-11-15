@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:online_store/common/cubits/button/button_state.dart';
@@ -14,6 +15,7 @@ import 'package:online_store/features/checkout/data/models/order_registration_re
 import 'package:online_store/features/checkout/domain/use_cases/order_regestration_use_case.dart';
 import 'package:online_store/features/checkout/presentation/pages/widgets/checkout_card.dart';
 import 'package:online_store/features/checkout/presentation/pages/widgets/successfully_checkout_widget.dart';
+import 'package:online_store/features/order/domain/entity/order_status_entity.dart';
 
 class CheckoutPageBody extends StatelessWidget {
   final List<CartItemEntity> cartItems;
@@ -56,6 +58,28 @@ class CheckoutPageBody extends StatelessWidget {
                         totalPrice: CartHelper.calculateCartSubTotal(cartItems),
                         orderNumber:
                             OrderHelper.generateOrderNumber().toString(),
+                        orderStatus: [
+                          OrderStatusEntity(
+                            title: 'Delivered',
+                            done: false,
+                            createdDate: Timestamp.now(),
+                          ),
+                          OrderStatusEntity(
+                            title: 'Shipping',
+                            done: false,
+                            createdDate: Timestamp.now(),
+                          ),
+                          OrderStatusEntity(
+                            title: 'Order Confirmed',
+                            done: false,
+                            createdDate: Timestamp.now(),
+                          ),
+                          OrderStatusEntity(
+                            title: 'Order Placed',
+                            done: false,
+                            createdDate: Timestamp.now(),
+                          ),
+                        ],
                       ),
                     );
               },
